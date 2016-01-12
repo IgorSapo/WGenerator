@@ -1,0 +1,47 @@
+@import "compass";
+
+@import "_common/mixins";
+
+/* --------- sprite --------- */
+
+@import "_common/icon-sprite.scss";
+
+/* --------- adjustment --------- */
+
+@import "_layout/normalize";
+@import "_layout/adjustment";
+
+/* --------- responsive --------- */
+
+@import "_layout/media";
+
+/* --------- sections --------- */
+
+@import "_sections/**/*";
+
+.wrapper {
+	background: transparent url("../img/background.jpg") repeat scroll center top / cover;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+}
+
+.appwindow {
+	width: 960px;
+	height: 670px;
+	margin: auto;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	// align-items: stretch;
+	justify-content: flex-start;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

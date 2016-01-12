@@ -1,0 +1,19 @@
+.preview {
+	width: 700px;
+	height: 670px;
+	background-color: #676162;
+	padding: 27px 24px;
+
+	&-header {
+		color: white;
+		font-size: 36px;
+		font-weight: 300;
+		margin: 0;
+	}
+
+	&-area {
+		width: 651px;
+		height: 534px;
+		background-color: white;
+	}
+}

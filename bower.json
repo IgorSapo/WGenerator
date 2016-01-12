@@ -1,0 +1,10 @@
+{
+  "name": "jade",
+  "dependencies": {
+    "jquery": "1.11",
+    "normalize-css": "~3.0.3",
+    "jquery-ui": "~1.11.4",
+    "jquery.columnizer": "~1.6.2",
+    "jquery-form-styler": "jquery.formstyler#~1.7.4"
+  }
+}

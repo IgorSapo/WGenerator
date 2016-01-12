@@ -1,0 +1,433 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$accordion-toggle-arrow-name: 'accordion-toggle-arrow';
+$accordion-toggle-arrow-x: 52px;
+$accordion-toggle-arrow-y: 115px;
+$accordion-toggle-arrow-offset-x: -52px;
+$accordion-toggle-arrow-offset-y: -115px;
+$accordion-toggle-arrow-width: 18px;
+$accordion-toggle-arrow-height: 11px;
+$accordion-toggle-arrow-total-width: 162px;
+$accordion-toggle-arrow-total-height: 130px;
+$accordion-toggle-arrow-image: 'icon-sprite.png';
+$accordion-toggle-arrow: (52px, 115px, -52px, -115px, 18px, 11px, 162px, 130px, 'icon-sprite.png', 'accordion-toggle-arrow', );
+$checkbox-checked-name: 'checkbox-checked';
+$checkbox-checked-x: 0px;
+$checkbox-checked-y: 60px;
+$checkbox-checked-offset-x: 0px;
+$checkbox-checked-offset-y: -60px;
+$checkbox-checked-width: 19px;
+$checkbox-checked-height: 19px;
+$checkbox-checked-total-width: 162px;
+$checkbox-checked-total-height: 130px;
+$checkbox-checked-image: 'icon-sprite.png';
+$checkbox-checked: (0px, 60px, 0px, -60px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'checkbox-checked', );
+$checkbox-empty-name: 'checkbox-empty';
+$checkbox-empty-x: 29px;
+$checkbox-empty-y: 60px;
+$checkbox-empty-offset-x: -29px;
+$checkbox-empty-offset-y: -60px;
+$checkbox-empty-width: 19px;
+$checkbox-empty-height: 19px;
+$checkbox-empty-total-width: 162px;
+$checkbox-empty-total-height: 130px;
+$checkbox-empty-image: 'icon-sprite.png';
+$checkbox-empty: (29px, 60px, -29px, -60px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'checkbox-empty', );
+$checkbox-hover-name: 'checkbox-hover';
+$checkbox-hover-x: 29px;
+$checkbox-hover-y: 31px;
+$checkbox-hover-offset-x: -29px;
+$checkbox-hover-offset-y: -31px;
+$checkbox-hover-width: 19px;
+$checkbox-hover-height: 19px;
+$checkbox-hover-total-width: 162px;
+$checkbox-hover-total-height: 130px;
+$checkbox-hover-image: 'icon-sprite.png';
+$checkbox-hover: (29px, 31px, -29px, -31px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'checkbox-hover', );
+$detailed-list-view-checked-name: 'detailed-list-view-checked';
+$detailed-list-view-checked-x: 52px;
+$detailed-list-view-checked-y: 89px;
+$detailed-list-view-checked-offset-x: -52px;
+$detailed-list-view-checked-offset-y: -89px;
+$detailed-list-view-checked-width: 16px;
+$detailed-list-view-checked-height: 16px;
+$detailed-list-view-checked-total-width: 162px;
+$detailed-list-view-checked-total-height: 130px;
+$detailed-list-view-checked-image: 'icon-sprite.png';
+$detailed-list-view-checked: (52px, 89px, -52px, -89px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'detailed-list-view-checked', );
+$detailed-list-view-name: 'detailed-list-view';
+$detailed-list-view-x: 26px;
+$detailed-list-view-y: 89px;
+$detailed-list-view-offset-x: -26px;
+$detailed-list-view-offset-y: -89px;
+$detailed-list-view-width: 16px;
+$detailed-list-view-height: 16px;
+$detailed-list-view-total-width: 162px;
+$detailed-list-view-total-height: 130px;
+$detailed-list-view-image: 'icon-sprite.png';
+$detailed-list-view: (26px, 89px, -26px, -89px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'detailed-list-view', );
+$footer-facebook-default-name: 'footer-facebook-default';
+$footer-facebook-default-x: 125px;
+$footer-facebook-default-y: 31px;
+$footer-facebook-default-offset-x: -125px;
+$footer-facebook-default-offset-y: -31px;
+$footer-facebook-default-width: 11px;
+$footer-facebook-default-height: 21px;
+$footer-facebook-default-total-width: 162px;
+$footer-facebook-default-total-height: 130px;
+$footer-facebook-default-image: 'icon-sprite.png';
+$footer-facebook-default: (125px, 31px, -125px, -31px, 11px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-facebook-default', );
+$footer-facebook-hover-name: 'footer-facebook-hover';
+$footer-facebook-hover-x: 125px;
+$footer-facebook-hover-y: 0px;
+$footer-facebook-hover-offset-x: -125px;
+$footer-facebook-hover-offset-y: 0px;
+$footer-facebook-hover-width: 11px;
+$footer-facebook-hover-height: 21px;
+$footer-facebook-hover-total-width: 162px;
+$footer-facebook-hover-total-height: 130px;
+$footer-facebook-hover-image: 'icon-sprite.png';
+$footer-facebook-hover: (125px, 0px, -125px, 0px, 11px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-facebook-hover', );
+$footer-twitter-default-name: 'footer-twitter-default';
+$footer-twitter-default-x: 0px;
+$footer-twitter-default-y: 0px;
+$footer-twitter-default-offset-x: 0px;
+$footer-twitter-default-offset-y: 0px;
+$footer-twitter-default-width: 25px;
+$footer-twitter-default-height: 21px;
+$footer-twitter-default-total-width: 162px;
+$footer-twitter-default-total-height: 130px;
+$footer-twitter-default-image: 'icon-sprite.png';
+$footer-twitter-default: (0px, 0px, 0px, 0px, 25px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-twitter-default', );
+$footer-twitter-hover-name: 'footer-twitter-hover';
+$footer-twitter-hover-x: 35px;
+$footer-twitter-hover-y: 0px;
+$footer-twitter-hover-offset-x: -35px;
+$footer-twitter-hover-offset-y: 0px;
+$footer-twitter-hover-width: 25px;
+$footer-twitter-hover-height: 21px;
+$footer-twitter-hover-total-width: 162px;
+$footer-twitter-hover-total-height: 130px;
+$footer-twitter-hover-image: 'icon-sprite.png';
+$footer-twitter-hover: (35px, 0px, -35px, 0px, 25px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-twitter-hover', );
+$footer-vk-default-name: 'footer-vk-default';
+$footer-vk-default-x: 99px;
+$footer-vk-default-y: 31px;
+$footer-vk-default-offset-x: -99px;
+$footer-vk-default-offset-y: -31px;
+$footer-vk-default-width: 16px;
+$footer-vk-default-height: 21px;
+$footer-vk-default-total-width: 162px;
+$footer-vk-default-total-height: 130px;
+$footer-vk-default-image: 'icon-sprite.png';
+$footer-vk-default: (99px, 31px, -99px, -31px, 16px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-vk-default', );
+$footer-vk-hover-name: 'footer-vk-hover';
+$footer-vk-hover-x: 99px;
+$footer-vk-hover-y: 0px;
+$footer-vk-hover-offset-x: -99px;
+$footer-vk-hover-offset-y: 0px;
+$footer-vk-hover-width: 16px;
+$footer-vk-hover-height: 21px;
+$footer-vk-hover-total-width: 162px;
+$footer-vk-hover-total-height: 130px;
+$footer-vk-hover-image: 'icon-sprite.png';
+$footer-vk-hover: (99px, 0px, -99px, 0px, 16px, 21px, 162px, 130px, 'icon-sprite.png', 'footer-vk-hover', );
+$header-facebook-default-name: 'header-facebook-default';
+$header-facebook-default-x: 104px;
+$header-facebook-default-y: 89px;
+$header-facebook-default-offset-x: -104px;
+$header-facebook-default-offset-y: -89px;
+$header-facebook-default-width: 6px;
+$header-facebook-default-height: 12px;
+$header-facebook-default-total-width: 162px;
+$header-facebook-default-total-height: 130px;
+$header-facebook-default-image: 'icon-sprite.png';
+$header-facebook-default: (104px, 89px, -104px, -89px, 6px, 12px, 162px, 130px, 'icon-sprite.png', 'header-facebook-default', );
+$header-facebook-hover-name: 'header-facebook-hover';
+$header-facebook-hover-x: 125px;
+$header-facebook-hover-y: 86px;
+$header-facebook-hover-offset-x: -125px;
+$header-facebook-hover-offset-y: -86px;
+$header-facebook-hover-width: 6px;
+$header-facebook-hover-height: 12px;
+$header-facebook-hover-total-width: 162px;
+$header-facebook-hover-total-height: 130px;
+$header-facebook-hover-image: 'icon-sprite.png';
+$header-facebook-hover: (125px, 86px, -125px, -86px, 6px, 12px, 162px, 130px, 'icon-sprite.png', 'header-facebook-hover', );
+$header-map-icon-name: 'header-map-icon';
+$header-map-icon-x: 146px;
+$header-map-icon-y: 70px;
+$header-map-icon-offset-x: -146px;
+$header-map-icon-offset-y: -70px;
+$header-map-icon-width: 12px;
+$header-map-icon-height: 16px;
+$header-map-icon-total-width: 162px;
+$header-map-icon-total-height: 130px;
+$header-map-icon-image: 'icon-sprite.png';
+$header-map-icon: (146px, 70px, -146px, -70px, 12px, 16px, 162px, 130px, 'icon-sprite.png', 'header-map-icon', );
+$header-phone-icon-name: 'header-phone-icon';
+$header-phone-icon-x: 146px;
+$header-phone-icon-y: 44px;
+$header-phone-icon-offset-x: -146px;
+$header-phone-icon-offset-y: -44px;
+$header-phone-icon-width: 12px;
+$header-phone-icon-height: 16px;
+$header-phone-icon-total-width: 162px;
+$header-phone-icon-total-height: 130px;
+$header-phone-icon-image: 'icon-sprite.png';
+$header-phone-icon: (146px, 44px, -146px, -44px, 12px, 16px, 162px, 130px, 'icon-sprite.png', 'header-phone-icon', );
+$header-twitter-default-name: 'header-twitter-default';
+$header-twitter-default-x: 146px;
+$header-twitter-default-y: 0px;
+$header-twitter-default-offset-x: -146px;
+$header-twitter-default-offset-y: 0px;
+$header-twitter-default-width: 16px;
+$header-twitter-default-height: 12px;
+$header-twitter-default-total-width: 162px;
+$header-twitter-default-total-height: 130px;
+$header-twitter-default-image: 'icon-sprite.png';
+$header-twitter-default: (146px, 0px, -146px, 0px, 16px, 12px, 162px, 130px, 'icon-sprite.png', 'header-twitter-default', );
+$header-twitter-hover-name: 'header-twitter-hover';
+$header-twitter-hover-x: 146px;
+$header-twitter-hover-y: 22px;
+$header-twitter-hover-offset-x: -146px;
+$header-twitter-hover-offset-y: -22px;
+$header-twitter-hover-width: 16px;
+$header-twitter-hover-height: 12px;
+$header-twitter-hover-total-width: 162px;
+$header-twitter-hover-total-height: 130px;
+$header-twitter-hover-image: 'icon-sprite.png';
+$header-twitter-hover: (146px, 22px, -146px, -22px, 16px, 12px, 162px, 130px, 'icon-sprite.png', 'header-twitter-hover', );
+$header-vk-default-name: 'header-vk-default';
+$header-vk-default-x: 146px;
+$header-vk-default-y: 118px;
+$header-vk-default-offset-x: -146px;
+$header-vk-default-offset-y: -118px;
+$header-vk-default-width: 10px;
+$header-vk-default-height: 12px;
+$header-vk-default-total-width: 162px;
+$header-vk-default-total-height: 130px;
+$header-vk-default-image: 'icon-sprite.png';
+$header-vk-default: (146px, 118px, -146px, -118px, 10px, 12px, 162px, 130px, 'icon-sprite.png', 'header-vk-default', );
+$header-vk-hover-name: 'header-vk-hover';
+$header-vk-hover-x: 146px;
+$header-vk-hover-y: 96px;
+$header-vk-hover-offset-x: -146px;
+$header-vk-hover-offset-y: -96px;
+$header-vk-hover-width: 10px;
+$header-vk-hover-height: 12px;
+$header-vk-hover-total-width: 162px;
+$header-vk-hover-total-height: 130px;
+$header-vk-hover-image: 'icon-sprite.png';
+$header-vk-hover: (146px, 96px, -146px, -96px, 10px, 12px, 162px, 130px, 'icon-sprite.png', 'header-vk-hover', );
+$pagination-arrow-next-name: 'pagination-arrow-next';
+$pagination-arrow-next-x: 103px;
+$pagination-arrow-next-y: 115px;
+$pagination-arrow-next-offset-x: -103px;
+$pagination-arrow-next-offset-y: -115px;
+$pagination-arrow-next-width: 6px;
+$pagination-arrow-next-height: 9px;
+$pagination-arrow-next-total-width: 162px;
+$pagination-arrow-next-total-height: 130px;
+$pagination-arrow-next-image: 'icon-sprite.png';
+$pagination-arrow-next: (103px, 115px, -103px, -115px, 6px, 9px, 162px, 130px, 'icon-sprite.png', 'pagination-arrow-next', );
+$pagination-arrow-previous-name: 'pagination-arrow-previous';
+$pagination-arrow-previous-x: 119px;
+$pagination-arrow-previous-y: 115px;
+$pagination-arrow-previous-offset-x: -119px;
+$pagination-arrow-previous-offset-y: -115px;
+$pagination-arrow-previous-width: 6px;
+$pagination-arrow-previous-height: 9px;
+$pagination-arrow-previous-total-width: 162px;
+$pagination-arrow-previous-total-height: 130px;
+$pagination-arrow-previous-image: 'icon-sprite.png';
+$pagination-arrow-previous: (119px, 115px, -119px, -115px, 6px, 9px, 162px, 130px, 'icon-sprite.png', 'pagination-arrow-previous', );
+$radio-checked-name: 'radio-checked';
+$radio-checked-x: 0px;
+$radio-checked-y: 31px;
+$radio-checked-offset-x: 0px;
+$radio-checked-offset-y: -31px;
+$radio-checked-width: 19px;
+$radio-checked-height: 19px;
+$radio-checked-total-width: 162px;
+$radio-checked-total-height: 130px;
+$radio-checked-image: 'icon-sprite.png';
+$radio-checked: (0px, 31px, 0px, -31px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'radio-checked', );
+$radio-empty-name: 'radio-empty';
+$radio-empty-x: 70px;
+$radio-empty-y: 0px;
+$radio-empty-offset-x: -70px;
+$radio-empty-offset-y: 0px;
+$radio-empty-width: 19px;
+$radio-empty-height: 19px;
+$radio-empty-total-width: 162px;
+$radio-empty-total-height: 130px;
+$radio-empty-image: 'icon-sprite.png';
+$radio-empty: (70px, 0px, -70px, 0px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'radio-empty', );
+$radio-hover-name: 'radio-hover';
+$radio-hover-x: 70px;
+$radio-hover-y: 29px;
+$radio-hover-offset-x: -70px;
+$radio-hover-offset-y: -29px;
+$radio-hover-width: 19px;
+$radio-hover-height: 19px;
+$radio-hover-total-width: 162px;
+$radio-hover-total-height: 130px;
+$radio-hover-image: 'icon-sprite.png';
+$radio-hover: (70px, 29px, -70px, -29px, 19px, 19px, 162px, 130px, 'icon-sprite.png', 'radio-hover', );
+$rating-star-active-name: 'rating-star-active';
+$rating-star-active-x: 26px;
+$rating-star-active-y: 115px;
+$rating-star-active-offset-x: -26px;
+$rating-star-active-offset-y: -115px;
+$rating-star-active-width: 16px;
+$rating-star-active-height: 15px;
+$rating-star-active-total-width: 162px;
+$rating-star-active-total-height: 130px;
+$rating-star-active-image: 'icon-sprite.png';
+$rating-star-active: (26px, 115px, -26px, -115px, 16px, 15px, 162px, 130px, 'icon-sprite.png', 'rating-star-active', );
+$rating-star-default-name: 'rating-star-default';
+$rating-star-default-x: 0px;
+$rating-star-default-y: 115px;
+$rating-star-default-offset-x: 0px;
+$rating-star-default-offset-y: -115px;
+$rating-star-default-width: 16px;
+$rating-star-default-height: 15px;
+$rating-star-default-total-width: 162px;
+$rating-star-default-total-height: 130px;
+$rating-star-default-image: 'icon-sprite.png';
+$rating-star-default: (0px, 115px, 0px, -115px, 16px, 15px, 162px, 130px, 'icon-sprite.png', 'rating-star-default', );
+$select-arrow-collapsed-name: 'select-arrow-collapsed';
+$select-arrow-collapsed-x: 80px;
+$select-arrow-collapsed-y: 115px;
+$select-arrow-collapsed-offset-x: -80px;
+$select-arrow-collapsed-offset-y: -115px;
+$select-arrow-collapsed-width: 13px;
+$select-arrow-collapsed-height: 9px;
+$select-arrow-collapsed-total-width: 162px;
+$select-arrow-collapsed-total-height: 130px;
+$select-arrow-collapsed-image: 'icon-sprite.png';
+$select-arrow-collapsed: (80px, 115px, -80px, -115px, 13px, 9px, 162px, 130px, 'icon-sprite.png', 'select-arrow-collapsed', );
+$simple-list-view-checked-name: 'simple-list-view-checked';
+$simple-list-view-checked-x: 0px;
+$simple-list-view-checked-y: 89px;
+$simple-list-view-checked-offset-x: 0px;
+$simple-list-view-checked-offset-y: -89px;
+$simple-list-view-checked-width: 16px;
+$simple-list-view-checked-height: 16px;
+$simple-list-view-checked-total-width: 162px;
+$simple-list-view-checked-total-height: 130px;
+$simple-list-view-checked-image: 'icon-sprite.png';
+$simple-list-view-checked: (0px, 89px, 0px, -89px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'simple-list-view-checked', );
+$simple-list-view-name: 'simple-list-view';
+$simple-list-view-x: 58px;
+$simple-list-view-y: 60px;
+$simple-list-view-offset-x: -58px;
+$simple-list-view-offset-y: -60px;
+$simple-list-view-width: 16px;
+$simple-list-view-height: 16px;
+$simple-list-view-total-width: 162px;
+$simple-list-view-total-height: 130px;
+$simple-list-view-image: 'icon-sprite.png';
+$simple-list-view: (58px, 60px, -58px, -60px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'simple-list-view', );
+$slider-handle-name: 'slider-handle';
+$slider-handle-x: 125px;
+$slider-handle-y: 62px;
+$slider-handle-offset-x: -125px;
+$slider-handle-offset-y: -62px;
+$slider-handle-width: 8px;
+$slider-handle-height: 14px;
+$slider-handle-total-width: 162px;
+$slider-handle-total-height: 130px;
+$slider-handle-image: 'icon-sprite.png';
+$slider-handle: (125px, 62px, -125px, -62px, 8px, 14px, 162px, 130px, 'icon-sprite.png', 'slider-handle', );
+$tile-view-checked-name: 'tile-view-checked';
+$tile-view-checked-x: 99px;
+$tile-view-checked-y: 62px;
+$tile-view-checked-offset-x: -99px;
+$tile-view-checked-offset-y: -62px;
+$tile-view-checked-width: 16px;
+$tile-view-checked-height: 16px;
+$tile-view-checked-total-width: 162px;
+$tile-view-checked-total-height: 130px;
+$tile-view-checked-image: 'icon-sprite.png';
+$tile-view-checked: (99px, 62px, -99px, -62px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'tile-view-checked', );
+$tile-view-name: 'tile-view';
+$tile-view-x: 78px;
+$tile-view-y: 89px;
+$tile-view-offset-x: -78px;
+$tile-view-offset-y: -89px;
+$tile-view-width: 16px;
+$tile-view-height: 16px;
+$tile-view-total-width: 162px;
+$tile-view-total-height: 130px;
+$tile-view-image: 'icon-sprite.png';
+$tile-view: (78px, 89px, -78px, -89px, 16px, 16px, 162px, 130px, 'icon-sprite.png', 'tile-view', );
+$spritesheet-width: 162px;
+$spritesheet-height: 130px;
+$spritesheet-image: 'icon-sprite.png';
+$spritesheet-sprites: ($accordion-toggle-arrow, $checkbox-checked, $checkbox-empty, $checkbox-hover, $detailed-list-view-checked, $detailed-list-view, $footer-facebook-default, $footer-facebook-hover, $footer-twitter-default, $footer-twitter-hover, $footer-vk-default, $footer-vk-hover, $header-facebook-default, $header-facebook-hover, $header-map-icon, $header-phone-icon, $header-twitter-default, $header-twitter-hover, $header-vk-default, $header-vk-hover, $pagination-arrow-next, $pagination-arrow-previous, $radio-checked, $radio-empty, $radio-hover, $rating-star-active, $rating-star-default, $select-arrow-collapsed, $simple-list-view-checked, $simple-list-view, $slider-handle, $tile-view-checked, $tile-view, );
+$spritesheet: (162px, 130px, 'icon-sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../img/entire-sprite/#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
