@@ -17,13 +17,70 @@
 			<div class="appwindow">
 				<div class="preview">
 					<h1 class="preview-header">Генератор водяных знаков</h1>
-					<div class="preview-area"></div>
+					<div class="preview-area">
+						<div style="width: 652px; height: 321px;" class="preview-mainarea"><img src="img/upload/1006.jpg" class="preview-mainarea_image">
+							<div id="draggable" style="opacity: 0.5" class="preview-wmarea"><img src="img/upload/548.jpg" class="preview-mainarea_image"></div>
+						</div>
+					</div>
 				</div>
 				<div class="controlpanel">
 					<h2 class="controlpanel-header">Настройки</h2>
-					<div class="imageupload"></div>
-					<div class="position"></div>
-					<div class="opacity"></div>
+					<div class="controlpanel-item imageupload">
+						<h3 class="controlpanel-subheader">Исходное изображение</h3>
+						<h3 class="controlpanel-subheader">Водяной знак</h3>
+					</div>
+					<div class="controlpanel-item position">
+						<h3 class="controlpanel-subheader">Положение</h3>
+						<div class="singleimage">
+							<div class="matrix-control">
+								<div class="matrix-container">
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item matrix-item_active"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="matrix-item"></div>
+									<div class="verpadding"></div>
+									<div class="horpadding"></div>
+								</div>
+							</div>
+							<div class="incremental">
+								<div class="incremental-item">
+									<label class="incremental-label"></label>
+									<input id="wm-X-value" type="text">
+									<div class="incremental-increase"></div>
+									<div class="incremental-decrease"></div>
+								</div>
+								<div class="incremental-item">
+									<label class="incremental-label"></label>
+									<input id="wm-X-value" type="text">
+									<div class="incremental-increase"></div>
+									<div class="incremental-decrease"></div>
+								</div>
+								<div class="incremental-item">
+									<label class="incremental-label"></label>
+									<input id="wm-X-value" type="text">
+									<div class="incremental-increase"></div>
+									<div class="incremental-decrease"></div>
+								</div>
+								<div class="incremental-item">
+									<label class="incremental-label"></label>
+									<input id="wm-X-value" type="text">
+									<div class="incremental-increase"></div>
+									<div class="incremental-decrease"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="controlpanel-item opacity">
+						<h3 class="controlpanel-subheader">Прозрачность</h3>
+						<div id="slider-range"></div>
+						<input id="opacityvalue" name="opacity" value="0.5">
+					</div>
+					<div class="buttons"></div>
 				</div>
 			</div>
 		</div>

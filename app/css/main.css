@@ -462,27 +462,61 @@ ul {
   flex-wrap: nowrap;
 }
 .controlpanel-header {
+  font-family: Roboto;
   font-size: 26px;
   font-weight: 300;
   color: #2e3742;
+  margin: 0;
+}
+.controlpanel-subheader {
+  font-family: Roboto;
+  color: rgba(46, 54, 65, 0.64);
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+}
+.controlpanel-item {
+  width: 100%;
+  border-bottom: 1px solid #f7bbc1;
+  padding: 20px;
+}
+.controlpanel .ui-slider {
+  position: relative;
+  display: block;
+  border: none;
+  height: 3px;
+  background: #dce2e9;
+  margin-bottom: 13px;
+}
+.controlpanel .ui-slider .ui-slider-handle {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.38);
+  border: 7px solid #dbe1e8;
+  margin-left: -11px;
+  margin-top: -10px;
+  background-color: #9eb2c0;
+}
+.controlpanel .ui-slider .ui-slider-range {
+  display: block;
+  height: 3px;
+  background: #9fb4c1;
+  position: absolute;
 }
 
 .imageupload {
-  width: 260px;
   height: 180px;
-  border-bottom: 1px solid #f7bbc1;
 }
 
 .opacity {
-  width: 260px;
   height: 100px;
-  border-bottom: 1px solid #f7bbc1;
 }
 
 .position {
-  width: 260px;
   height: 200px;
-  border-bottom: 1px solid #f7bbc1;
 }
 
 .preview {
@@ -501,6 +535,81 @@ ul {
   width: 651px;
   height: 534px;
   background-color: white;
+  position: relative;
+}
+.preview-mainarea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.preview-mainarea_image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.preview-wmarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.preview-wmarea_image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.preview-wmarea:hover {
+  cursor: move;
+}
+
+.singleimage .matrix-control .matrix-container {
+  width: 101px;
+  height: 101px;
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid #9eb2c0;
+  border-radius: 3px;
+  background-color: #dbe1e9;
+  position: relative;
+}
+.singleimage .matrix-control .matrix-container .matrix-item {
+  width: 33px;
+  height: 33px;
+  border-left: 1px solid #9eb2c0;
+  border-top: 1px solid #9eb2c0;
+  margin: 0;
+  padding: 0;
+}
+.singleimage .matrix-control .matrix-container .matrix-item:nth-child(3n+1) {
+  border-left: none;
+}
+.singleimage .matrix-control .matrix-container .matrix-item:nth-child(-n+3) {
+  border-top: none;
+}
+.singleimage .matrix-control .matrix-container .matrix-item_active {
+  background-color: #f97f77;
+}
+.singleimage .matrix-control .matrix-container .verpadding {
+  height: 100%;
+  width: 3px;
+  background-color: #f97f77;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.singleimage .matrix-control .matrix-container .horpadding {
+  width: 100%;
+  height: 3px;
+  background-color: #f97f77;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .wrapper {

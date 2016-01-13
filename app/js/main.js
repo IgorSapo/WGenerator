@@ -1,21 +1,30 @@
 $(document).ready(function() {
 
     $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 25000,
-      step: 100,
-      values: [ 1000, 13000 ],
-      slide: function( event, ui ) {
-        // $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        $( "#minprice" ).val( ui.values[ 0 ] + " руб." );
-        $( "#maxprice" ).val( ui.values[ 1 ] + " руб." );
-      }
+        range: "min",
+        min: 0,
+        max: 1,
+        step: 0.01,
+        value: 0.5,
+        slide: function(event, ui){
+            $( "#opacityvalue" ).val( ui.value );
+            $(".preview-wmarea").css('opacity', ui.value);
+            // _changeWmOpacity();
+        }
+      // slide: function( event, ui ) {
+      //   // $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      //   $( "#minprice" ).val( ui.values[ 0 ] + " руб." );
+      //   $( "#maxprice" ).val( ui.values[ 1 ] + " руб." );
+      // }
     });
     // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
     //   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-    $( "#minprice" ).val( $( "#slider-range" ).slider( "values", 0 ) + " руб.");
-    $( "#maxprice" ).val( $( "#slider-range" ).slider( "values", 1 ) + " руб.");
+    // $( "#minprice" ).val( $( "#slider-range" ).slider( "values", 0 ) + " руб.");
+    // $( "#maxprice" ).val( $( "#slider-range" ).slider( "values", 1 ) + " руб.");
+
+    $( "#draggable" ).draggable({
+        containment: $(".preview-mainarea")
+    });
 
     $('.product-slider__min-image').on('click', function(){
     var $this = $(this),

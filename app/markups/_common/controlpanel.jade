@@ -1,10 +1,16 @@
 .controlpanel
 	h2.controlpanel-header Настройки
-	include imageupload
+	.controlpanel-item.imageupload
+		h3.controlpanel-subheader Исходное изображение
 		include mainimage
+		h3.controlpanel-subheader Водяной знак
 		include watermark
-	include position
+	.controlpanel-item.position
+		h3.controlpanel-subheader Положение
 		include singleimage
 		include multipleimage
-	include opacity
-	include buttons
+	.controlpanel-item.opacity
+		h3.controlpanel-subheader Прозрачность
+		div#slider-range
+		input(id="opacityvalue" name="opacity" value="0.5")
+	.buttons

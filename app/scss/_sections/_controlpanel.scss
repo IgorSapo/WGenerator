@@ -7,8 +7,63 @@
 	flex-wrap: nowrap;
 
 	&-header {
+		font-family: Roboto;
 		font-size: 26px;
 		font-weight: 300;
 		color: #2e3742;
+		margin: 0;
 	}
+
+	&-subheader {
+		font-family: Roboto;
+		color: rgba(46, 54, 65, 0.64);
+		font-size: 14px;
+		font-weight: 300;
+		margin: 0;
+	}
+
+	&-item {
+		width: 100%;
+		border-bottom: 1px solid #f7bbc1;
+		padding: 20px;
+	}
+
+		// .pricerange-container {
+		// 	margin: 0 0 18px 0;
+		// 	color: #333333;
+		// 	font-size: 14px;
+		// 	font-weight: 400;
+		// }
+
+			.ui-slider {
+			position: relative;
+			display: block;
+			border: none;
+			height: 3px;
+			background: #dce2e9;
+			margin-bottom: 13px;
+
+			.ui-slider-handle/* .ui-state-default */ {
+				position: absolute;
+				display: block;
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.38);
+				border: 7px solid #dbe1e8;
+				margin-left: -11px;
+				margin-top: -10px;
+				background-color: #9eb2c0;
+
+				// background-color: #dbe1e8;
+				// @include sprite($slider-handle);
+			}
+
+			.ui-slider-range/* .ui-widget-header */ {
+				display: block;
+				height: 3px;
+				background: #9fb4c1;
+				position: absolute;
+			}
+		}
 }
