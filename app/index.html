@@ -24,63 +24,70 @@
 					</div>
 				</div>
 				<div class="controlpanel">
-					<h2 class="controlpanel-header">Настройки</h2>
-					<div class="controlpanel-item imageupload">
-						<h3 class="controlpanel-subheader">Исходное изображение</h3>
-						<h3 class="controlpanel-subheader">Водяной знак</h3>
-					</div>
-					<div class="controlpanel-item position">
-						<h3 class="controlpanel-subheader">Положение</h3>
-						<div class="singleimage">
-							<div class="matrix-control">
-								<div class="matrix-container">
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item matrix-item_active"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="matrix-item"></div>
-									<div class="verpadding"></div>
-									<div class="horpadding"></div>
-								</div>
+					<form action="php/upload.php" class="wmsettings">
+						<h2 class="controlpanel-header">Настройки</h2>
+						<div class="controlpanel-item imageupload">
+							<h3 class="controlpanel-subheader">Исходное изображение</h3>
+							<div class="imageupload-wrapper">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите4 изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<label for="imageupload-realinput" class="imageupload-button"></label>
+								<input id="imageupload-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
 							</div>
-							<div class="incremental">
-								<div class="incremental-item">
-									<label class="incremental-label"></label>
-									<input id="wm-X-value" type="text">
-									<div class="incremental-increase"></div>
-									<div class="incremental-decrease"></div>
+							<h3 class="controlpanel-subheader">Водяной знак</h3>
+							<div class="imageupload-wrapper">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите2 изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<label for="imageupload-realinput" class="imageupload-button"></label>
+								<input id="imageupload-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
+							</div>
+						</div>
+						<div class="controlpanel-item position">
+							<h3 class="controlpanel-subheader">Положение</h3>
+							<div class="singleimage">
+								<div class="matrix-control">
+									<div class="matrix-container">
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item matrix-item_active"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="verpadding"></div>
+										<div class="horpadding"></div>
+									</div>
 								</div>
-								<div class="incremental-item">
-									<label class="incremental-label"></label>
-									<input id="wm-X-value" type="text">
-									<div class="incremental-increase"></div>
-									<div class="incremental-decrease"></div>
-								</div>
-								<div class="incremental-item">
-									<label class="incremental-label"></label>
-									<input id="wm-X-value" type="text">
-									<div class="incremental-increase"></div>
-									<div class="incremental-decrease"></div>
-								</div>
-								<div class="incremental-item">
-									<label class="incremental-label"></label>
-									<input id="wm-X-value" type="text">
-									<div class="incremental-increase"></div>
-									<div class="incremental-decrease"></div>
+								<div class="incremental">
+									<div class="incremental-item">
+										<label class="incremental-label incremental-label_wmposX">X</label>
+										<input id="spinner" type="text" name="wmposX-value" class="incremental-input">
+									</div>
+									<div class="incremental-item">
+										<label class="incremental-label incremental-label_wmposY">Y</label>
+										<input id="spinner" type="text" name="wmposY-value" class="incremental-input">
+									</div>
+									<div class="incremental-item">
+										<label class="incremental-label incremental-label_wmpaddingX"></label>
+										<input id="spinner" type="text" name="wmpaddingX-value" class="incremental-input">
+									</div>
+									<div class="incremental-item">
+										<label class="incremental-label incremental-label_wmpaddingY"></label>
+										<input id="spinner" type="text" name="wmpaddingY-value" class="incremental-input">
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="controlpanel-item opacity">
-						<h3 class="controlpanel-subheader">Прозрачность</h3>
-						<div id="slider-range"></div>
-						<input id="opacityvalue" name="opacity" value="0.5">
-					</div>
-					<div class="buttons"></div>
+						<div class="controlpanel-item opacity">
+							<h3 class="controlpanel-subheader">Прозрачность</h3>
+							<div id="slider-range"></div>
+							<input id="opacityvalue" name="opacity" value="0.5">
+						</div>
+						<div class="buttons">
+							<button type="reset" class="button button_reset">Сброс</button>
+							<button type="sumbit" class="button button_submit">Скачать</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

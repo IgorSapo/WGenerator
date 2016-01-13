@@ -1,4 +1,8 @@
 .singleimage {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
 	.matrix-control {
 
 
@@ -61,10 +65,94 @@
 		}
 	}
 	.incremental {
-		&-item {}
-		&-label {}
-		#wm-X-value {}
-		&-increase {}
-		&-decrease {}
+		display: flex;
+		flex-flow: column nowrap;
+
+		// justify-content: space-between;
+
+		&-item {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-end;
+			align-items: center;
+			margin-bottom: 12px;
+
+			.incremental-label {
+				display: block;
+				&_wmpaddingX {
+					background-image: url("/img/incremental-padding-X.png");
+					width: 11px;
+					height: 30px;
+				}
+				&_wmpaddingY {
+					width: 29px;
+					height: 9px;
+					background-image: url("/img/incremental-padding-Y.png");
+				}
+			}
+
+			.ui-spinner {
+				display: block;
+				position: relative;
+				margin: 0 0 0 6px;
+				width: 67px; 
+
+				&-up { // .incremental-increase
+					display: block;
+					width: 13px;
+					height: 8px;
+					background-image: url('/img/incremental-arrow-up.png');
+					background-repeat: no-repeat;
+					font-size: 0px;
+					position: absolute;
+					right: 2px;
+					top: 5px;
+					cursor: pointer;
+
+					&:hover {
+						background-image: url('/img/incremental-arrow-up-hover.png');
+					}
+				}
+
+				&-down { // .incremental-decrease
+					display: block;
+					width: 13px;
+					height: 8px;
+					background-image: url('/img/incremental-arrow-down.png');
+					background-repeat: no-repeat;
+					font-size: 0px;
+					position: absolute;
+					right: 2px;
+					bottom: 3px;
+					cursor: pointer;
+
+					&:hover {
+						background-image: url('/img/incremental-arrow-down-hover.png');
+					}
+				}	
+			}
+
+
+
+			.incremental-input {
+				border: 1px solid #9eb2c0;
+				width: 46px;
+				height: 45px;
+				border-radius: 3px;
+			}
+
+			
+			.incremental-buttons {
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-between;
+				align-self: stretch;
+				margin-left: 6px;
+
+
+
+
+			}
+		}
 	}
 }

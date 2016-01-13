@@ -511,6 +511,36 @@ ul {
   height: 180px;
 }
 
+.imageupload-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.imageupload-wrapper .imageupload-fakeinput {
+  border-radius: 3px 0 0 3px;
+  border: 1px solid #9eb2c0;
+  border-right: none;
+  width: 180px;
+  height: 27px;
+}
+.imageupload-wrapper .imageupload-button {
+  background-color: #f97e76;
+  width: 39px;
+  height: 27px;
+  display: flex;
+  border-radius: 0px 3px 3px 0px;
+}
+.imageupload-wrapper .imageupload-button:after {
+  content: "";
+  width: 21px;
+  height: 16px;
+  background-image: url("/img/upload-button-icon.png");
+  margin: auto;
+}
+.imageupload-wrapper .imageupload-realinput {
+  position: absolute;
+  left: -9999px;
+}
+
 .opacity {
   height: 100px;
 }
@@ -562,6 +592,11 @@ ul {
   cursor: move;
 }
 
+.singleimage {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
 .singleimage .matrix-control .matrix-container {
   width: 101px;
   height: 101px;
@@ -610,6 +645,79 @@ ul {
   left: 0;
   right: 0;
   margin: auto;
+}
+.singleimage .incremental {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.singleimage .incremental-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.singleimage .incremental-item .incremental-label {
+  display: block;
+}
+.singleimage .incremental-item .incremental-label_wmpaddingX {
+  background-image: url("/img/incremental-padding-X.png");
+  width: 11px;
+  height: 30px;
+}
+.singleimage .incremental-item .incremental-label_wmpaddingY {
+  width: 29px;
+  height: 9px;
+  background-image: url("/img/incremental-padding-Y.png");
+}
+.singleimage .incremental-item .ui-spinner {
+  display: block;
+  position: relative;
+  margin: 0 0 0 6px;
+  width: 67px;
+}
+.singleimage .incremental-item .ui-spinner-up {
+  display: block;
+  width: 13px;
+  height: 8px;
+  background-image: url("/img/incremental-arrow-up.png");
+  background-repeat: no-repeat;
+  font-size: 0px;
+  position: absolute;
+  right: 2px;
+  top: 5px;
+  cursor: pointer;
+}
+.singleimage .incremental-item .ui-spinner-up:hover {
+  background-image: url("/img/incremental-arrow-up-hover.png");
+}
+.singleimage .incremental-item .ui-spinner-down {
+  display: block;
+  width: 13px;
+  height: 8px;
+  background-image: url("/img/incremental-arrow-down.png");
+  background-repeat: no-repeat;
+  font-size: 0px;
+  position: absolute;
+  right: 2px;
+  bottom: 3px;
+  cursor: pointer;
+}
+.singleimage .incremental-item .ui-spinner-down:hover {
+  background-image: url("/img/incremental-arrow-down-hover.png");
+}
+.singleimage .incremental-item .incremental-input {
+  border: 1px solid #9eb2c0;
+  width: 46px;
+  height: 45px;
+  border-radius: 3px;
+}
+.singleimage .incremental-item .incremental-buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-self: stretch;
+  margin-left: 6px;
 }
 
 .wrapper {

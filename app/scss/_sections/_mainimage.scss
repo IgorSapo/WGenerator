@@ -1,0 +1,33 @@
+.imageupload-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+
+	.imageupload-fakeinput {
+		border-radius: 3px 0 0 3px;
+		border: 1px solid #9eb2c0;
+		border-right: none;
+		width: 180px;
+		height: 27px;
+	}
+
+	.imageupload-button {
+		background-color: #f97e76;
+		width: 39px;
+		height: 27px;
+		display: flex;
+		border-radius: 0px 3px 3px 0px;
+
+		&:after {
+			content: "";
+			width: 21px;
+			height: 16px;
+			background-image: url("/img/upload-button-icon.png");
+			margin: auto;
+		}
+	}
+
+	.imageupload-realinput {
+		position: absolute;
+		left: -9999px;
+	}
+}

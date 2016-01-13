@@ -5,6 +5,7 @@
     "normalize-css": "~3.0.3",
     "jquery-ui": "~1.11.4",
     "jquery.columnizer": "~1.6.2",
-    "jquery-form-styler": "jquery.formstyler#~1.7.4"
+    "jquery-form-styler": "jquery.formstyler#~1.7.4",
+    "blueimp-file-upload": "~9.11.2"
   }
 }

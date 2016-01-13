@@ -1,16 +1,17 @@
 .controlpanel
-	h2.controlpanel-header Настройки
-	.controlpanel-item.imageupload
-		h3.controlpanel-subheader Исходное изображение
-		include mainimage
-		h3.controlpanel-subheader Водяной знак
-		include watermark
-	.controlpanel-item.position
-		h3.controlpanel-subheader Положение
-		include singleimage
-		include multipleimage
-	.controlpanel-item.opacity
-		h3.controlpanel-subheader Прозрачность
-		div#slider-range
-		input(id="opacityvalue" name="opacity" value="0.5")
-	.buttons
+	form(action="php/upload.php" class="wmsettings")
+		h2.controlpanel-header Настройки
+		.controlpanel-item.imageupload
+			include mainimage
+			//- include watermark
+		.controlpanel-item.position
+			h3.controlpanel-subheader Положение
+			include singleimage
+			include multipleimage
+		.controlpanel-item.opacity
+			h3.controlpanel-subheader Прозрачность
+			div#slider-range
+			input(id="opacityvalue" name="opacity" value="0.5")
+		.buttons
+			button(type="reset" class="button button_reset") Сброс
+			button(type="sumbit" class="button button_submit") Скачать

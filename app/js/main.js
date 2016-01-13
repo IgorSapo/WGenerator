@@ -22,8 +22,33 @@ $(document).ready(function() {
     // $( "#minprice" ).val( $( "#slider-range" ).slider( "values", 0 ) + " руб.");
     // $( "#maxprice" ).val( $( "#slider-range" ).slider( "values", 1 ) + " руб.");
 
+    $( ".incremental-input" ).spinner ({
+        min: 0
+    });
+
     $( "#draggable" ).draggable({
         containment: $(".preview-mainarea")
+    });
+
+    // var $inputFile = $('#imageupload-realinput');
+    
+    // $inputFile.on('change', function(){
+    //         var filepath = $inputFile.val(),
+    //         $input = $('#imageupload-fakeinput');
+        
+    //         filepath = filepath.replace(/c:\\fakepath\\/gmi, "");
+    //         $input.val(filepath);
+    //         $input.focus();
+    //         $inputFile.focus();
+    // });
+
+    var $inputFile = $('.imageupload-realinput');
+    $inputFile.on('change', function(){
+        var filepath = $inputFile.val(),
+        $input = $inputFile.siblings(".imageupload-fakeinput")
+
+        filepath = filepath.replace(/c:\\fakepath\\/gmi, "");
+        $input.val(filepath);
     });
 
     $('.product-slider__min-image').on('click', function(){
