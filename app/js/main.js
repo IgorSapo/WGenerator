@@ -50,8 +50,79 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
     wmRealHeight = $(".preview-watermark_image").prop('naturalHeight');
 
 
-
     scale = (mainImageScreenWidth / mainImageRealWidth).toFixed(4);
+
+    countWidth = Math.round(mainImageRealWidth / wmRealWidth) + 1;
+    countHeight = Math.round(mainImageRealHeight / wmRealHeight) + 1;
+    cloneQuantity = (countWidth * countHeight) - 1;
+    //console.log(cloneQuantity);
+    // console.log(mainImageRealWidth);
+    // console.log(mainImageRealHeight);
+
+
+    // console.log(canvasRealWidth);
+    // console.log(canvasRealHeight);
+
+    var getScreenDimension = function(realDimension) {
+        return Math.round(realDimension * scale);
+    }
+
+    var getRealDimension = function(screenDimension) {
+        return Math.round(screenDimension / scale);
+    }
+
+    canvasRealWidth = mainImageRealWidth + (wmRealWidth * 2) ;
+    canvasRealHeight = mainImageRealHeight + (wmRealHeight * 2);
+    canvasScreenWidth = getScreenDimension(canvasRealWidth);
+    canvasScreenHeight = getScreenDimension(canvasRealHeight);
+
+    numberOfClones = (Math.round((canvasRealWidth * canvasRealHeight) / (wmRealWidth * wmRealWidth)))*2;
+    console.log(numberOfClones);
+
+    containmentScreenWidth = (mainImageScreenWidth + (canvasScreenWidth * 1.9));
+    containmentScreenHeight = (mainImageScreenHeight + (canvasScreenHeight * 1.9));
+// console.log(containmentScreenWidth);
+// console.log(containmentScreenHeight);
+    
+    containmentScreenLeft = -0.5 * (containmentScreenWidth - mainImageScreenWidth);
+    containmentScreenTop = -0.5 * (containmentScreenHeight - mainImageScreenHeight);
+console.log(containmentScreenLeft);
+console.log(containmentScreenTop);
+
+    //canvasScreenWidth = 
+
+    // var populateWm = function(cloneQuantity) {
+
+    // };
+    // var depopulateWm = null;
+
+$(".preview-mainarea_containment").css('width', containmentScreenWidth + "px");
+$(".preview-mainarea_containment").css('height', containmentScreenHeight + "px");
+
+$(".preview-mainarea_containment").css('left', containmentScreenLeft + 'px');
+$(".preview-mainarea_containment").css('top', containmentScreenTop + 'px');
+
+$(".preview-wmarea").css('width', canvasScreenWidth);
+$(".preview-wmarea").css('height', canvasScreenHeight);
+
+        for (var i = 0; i < numberOfClones; i++) {
+            $(".preview-watermark_image").clone().first().appendTo($(".preview-wmarea"))
+
+            // console.log(i);
+            // console.log(cloneQuantity);
+            // clone = $(".preview-watermark_image").clone();
+            // console.log(clone);
+            // $(".preview-wmarea").append(clone);
+            
+            // .removeClass('preview-watermark_image')
+            // .addClass('preview-watermark_image_clone')
+            // .appendTo($(".preview-wmarea"))
+        };
+
+
+
+
+
 
     defaultWmPaddingX = 0;
     defaultWmPaddingY = 0;
@@ -63,13 +134,7 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
     currentWmX = 0;
     currentWmY = 0;
 
-    var getScreenDimension = function(realDimension) {
-        return Math.round(realDimension * scale);
-    }
 
-    var getRealDimension = function(screenDimension) {
-        return Math.round(screenDimension / scale);
-    }
 
     wmScreenWidth = getScreenDimension(wmRealWidth);
     wmScreenHeight = getScreenDimension(wmRealHeight);
@@ -79,6 +144,14 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
         width: wmScreenWidth,
         height: wmScreenHeight
     });
+
+
+
+
+
+
+
+
 
 
 $(".incremental-ipnut_wmpaddingX").val(defaultWmPaddingX);
@@ -237,7 +310,7 @@ $(".matrix-item").on('click', function() {
     // $( "#maxprice" ).val( $( "#slider-range" ).slider( "values", 1 ) + " руб.");
 
     $( ".incremental-input" ).spinner({
-        min: 0
+        // min: 0
     });
 
     $(".incremental-ipnut_wmposX").on('spin', function(event, ui) {
@@ -261,7 +334,9 @@ $(".matrix-item").on('click', function() {
         var currentVal = (Math.round(ui.value*scale)) + 'px';
         $(".preview-watermark_image").css('margin-right', currentVal);
         currentWmPaddingX = currentVal;
-        $(".horpadding").css('height', ui.value)
+        $(".horpadding").css('width', ui.value)
+
+
         // $(".matrix-item").removeClass('matrix-item_active')
     });
 
@@ -273,7 +348,7 @@ $(".matrix-item").on('click', function() {
         var currentVal = (Math.round(ui.value*scale)) + 'px';
         $(".preview-watermark_image").css('margin-bottom', currentVal);
         currentWmPaddingY = currentVal;
-        $(".verpadding").css('width', ui.value)
+        $(".verpadding").css('height', ui.value)
 
     });
 
@@ -282,7 +357,7 @@ $(".matrix-item").on('click', function() {
 
 
     $( "#draggable" ).draggable({
-        containment: $(".preview-mainarea"),
+        containment: $(".preview-mainarea_containment"),
         drag: function() {
             // console.log(parseInt($(".preview-wmarea").css("top"))),
             // console.log(parseInt($(".preview-wmarea").css("left")))
