@@ -1,7 +1,8 @@
 .controlpanel
-	form(action="php/upload.php" class="wmsettings")
+	form(action="php/upload.php" class="wmsettings" method="POST" enctype="multipart/form-data")
 		h2.controlpanel-header Настройки
 		.controlpanel-item.imageupload
+			//- input(id="fileupload" type="file" name="files[]" data-url="server/php/" multiple)
 			include mainimage
 			//- include watermark
 		.controlpanel-item.position

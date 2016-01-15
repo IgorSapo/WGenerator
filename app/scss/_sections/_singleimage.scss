@@ -15,6 +15,7 @@
 			border-radius: 3px;
 			background-color: #dbe1e9;
 			position: relative;
+			overflow: hidden;
 
 			.matrix-item {
 				width: 33px;
@@ -41,7 +42,7 @@
 
 			.verpadding {
 				height: 100%;
-				width: 3px;
+				width: 0px;
 				background-color: #f97f77;
 				position: absolute;
 				top: 0;
@@ -53,7 +54,7 @@
 
 			.horpadding {
 				width: 100%;
-				height: 3px;
+				height: 0px;
 				background-color: #f97f77;
 				position: absolute;
 				top: 0;
@@ -81,12 +82,12 @@
 				display: block;
 				&_wmpaddingX {
 					background-image: url("/img/incremental-padding-X.png");
-					width: 11px;
-					height: 30px;
+					width: 29px; //11px
+					height: 9px; //30px
 				}
 				&_wmpaddingY {
-					width: 29px;
-					height: 9px;
+					width: 11px; //29px
+					height: 30px; //9px
 					background-image: url("/img/incremental-padding-Y.png");
 				}
 			}

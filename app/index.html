@@ -16,28 +16,28 @@
 		<div class="wrapper">
 			<div class="appwindow">
 				<div class="preview">
-					<h1 class="preview-header">Генератор водяных знаков</h1>
+					<h1 class="preview-header">Генератор водяных знаков1</h1>
 					<div class="preview-area">
-						<div style="width: 652px; height: 321px;" class="preview-mainarea"><img src="img/upload/1006.jpg" class="preview-mainarea_image">
-							<div id="draggable" style="opacity: 0.5" class="preview-wmarea"><img src="img/upload/548.jpg" class="preview-mainarea_image"></div>
+						<div class="preview-mainarea"><img src="img/upload/1006.jpg" class="preview-mainimage_image">
+							<div id="draggable" style="opacity: 0.5" class="preview-wmarea"><img src="img/upload/548.jpg" class="preview-watermark_image"></div>
 						</div>
 					</div>
 				</div>
 				<div class="controlpanel">
-					<form action="php/upload.php" class="wmsettings">
+					<form action="php/upload.php" method="POST" enctype="multipart/form-data" class="wmsettings">
 						<h2 class="controlpanel-header">Настройки</h2>
 						<div class="controlpanel-item imageupload">
-							<h3 class="controlpanel-subheader">Исходное изображение</h3>
-							<div class="imageupload-wrapper">
-								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите4 изображение" name="mainimageshortname" required class="imageupload-fakeinput">
-								<label for="imageupload-realinput" class="imageupload-button"></label>
-								<input id="imageupload-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
+							<h3 class="controlpanel-subheader">Исходное изображение1</h3>
+							<div class="imageupload-wrapper mainimage-upload">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<label for="mainimage-realinput" class="imageupload-button"></label>
+								<input id="mainimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
 							</div>
 							<h3 class="controlpanel-subheader">Водяной знак</h3>
-							<div class="imageupload-wrapper">
-								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите2 изображение" name="mainimageshortname" required class="imageupload-fakeinput">
-								<label for="imageupload-realinput" class="imageupload-button"></label>
-								<input id="imageupload-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
+							<div class="imageupload-wrapper watermark-upload">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<label for="wmimage-realinput" class="imageupload-button"></label>
+								<input id="wmimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
 							</div>
 						</div>
 						<div class="controlpanel-item position">
@@ -45,15 +45,15 @@
 							<div class="singleimage">
 								<div class="matrix-control">
 									<div class="matrix-container">
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item matrix-item_active"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
-										<div class="matrix-item"></div>
+										<div class="matrix-item left-top"></div>
+										<div class="matrix-item center-top"></div>
+										<div class="matrix-item right-top matrix-item_active"></div>
+										<div class="matrix-item left-center"></div>
+										<div class="matrix-item center-center"></div>
+										<div class="matrix-item right-center"></div>
+										<div class="matrix-item left-bottom"></div>
+										<div class="matrix-item center-bottom"></div>
+										<div class="matrix-item right-bottom"></div>
 										<div class="verpadding"></div>
 										<div class="horpadding"></div>
 									</div>
@@ -61,19 +61,19 @@
 								<div class="incremental">
 									<div class="incremental-item">
 										<label class="incremental-label incremental-label_wmposX">X</label>
-										<input id="spinner" type="text" name="wmposX-value" class="incremental-input">
+										<input id="spinner" type="text" name="wmposX-value" class="incremental-input incremental-ipnut_wmposX">
 									</div>
 									<div class="incremental-item">
 										<label class="incremental-label incremental-label_wmposY">Y</label>
-										<input id="spinner" type="text" name="wmposY-value" class="incremental-input">
+										<input id="spinner" type="text" name="wmposY-value" class="incremental-input incremental-ipnut_wmposY">
 									</div>
 									<div class="incremental-item">
 										<label class="incremental-label incremental-label_wmpaddingX"></label>
-										<input id="spinner" type="text" name="wmpaddingX-value" class="incremental-input">
+										<input id="spinner" type="text" name="wmpaddingX-value" class="incremental-input incremental-ipnut_wmpaddingX">
 									</div>
 									<div class="incremental-item">
 										<label class="incremental-label incremental-label_wmpaddingY"></label>
-										<input id="spinner" type="text" name="wmpaddingY-value" class="incremental-input">
+										<input id="spinner" type="text" name="wmpaddingY-value" class="incremental-input incremental-ipnut_wmpaddingY">
 									</div>
 								</div>
 							</div>

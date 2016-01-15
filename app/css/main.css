@@ -566,27 +566,27 @@ ul {
   height: 534px;
   background-color: white;
   position: relative;
+  display: flex;
 }
 .preview-mainarea {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin: auto;
+  max-width: 651px;
+  max-height: 534px;
+  position: relative;
 }
-.preview-mainarea_image {
-  max-width: 100%;
-  max-height: 100%;
+.preview-mainarea .preview-mainimage_image {
+  max-width: 651px;
+  max-height: 534px;
 }
 .preview-wmarea {
   position: absolute;
   top: 0;
   left: 0;
 }
-.preview-wmarea_image {
+.preview-wmarea .preview-watermark_image {
   max-width: 100%;
   max-height: 100%;
+  display: block;
 }
 .preview-wmarea:hover {
   cursor: move;
@@ -606,6 +606,7 @@ ul {
   border-radius: 3px;
   background-color: #dbe1e9;
   position: relative;
+  overflow: hidden;
 }
 .singleimage .matrix-control .matrix-container .matrix-item {
   width: 33px;
@@ -626,7 +627,7 @@ ul {
 }
 .singleimage .matrix-control .matrix-container .verpadding {
   height: 100%;
-  width: 3px;
+  width: 0px;
   background-color: #f97f77;
   position: absolute;
   top: 0;
@@ -637,7 +638,7 @@ ul {
 }
 .singleimage .matrix-control .matrix-container .horpadding {
   width: 100%;
-  height: 3px;
+  height: 0px;
   background-color: #f97f77;
   position: absolute;
   top: 0;
@@ -662,12 +663,12 @@ ul {
 }
 .singleimage .incremental-item .incremental-label_wmpaddingX {
   background-image: url("/img/incremental-padding-X.png");
-  width: 11px;
-  height: 30px;
-}
-.singleimage .incremental-item .incremental-label_wmpaddingY {
   width: 29px;
   height: 9px;
+}
+.singleimage .incremental-item .incremental-label_wmpaddingY {
+  width: 11px;
+  height: 30px;
   background-image: url("/img/incremental-padding-Y.png");
 }
 .singleimage .incremental-item .ui-spinner {

@@ -1,5 +1,219 @@
 $(document).ready(function() {
 
+    // var mainImageRealWidth = $("preview-mainarea_image").naturalHeight;
+    // console.log($(this).prop('naturalHeight'));
+    // console.log(mainImageRealWidth);
+
+// $(function () {
+//     $('#fileupload').fileupload({
+//         dataType: 'json',
+//         done: function (e, data) {
+//             $.each(data.result.files, function (index, file) {
+//                 $('<p/>').text(file.name).appendTo(document.body);
+//             });
+//         }
+//     });
+// });
+
+
+// $(function () {
+// $('#imageupload-realinput').fileupload({
+
+//         url: 'server/php/',
+
+//         add: function(e, data) {
+
+//             console.log('add');
+//             data.submit();
+
+//         },
+
+//         done: function(e, data) {
+              
+//               var img = $('<img></img>'),
+//                   uploadImg = data.result.files[0];
+
+//               img.attr('src', uploadImg.url);
+//               img.appendTo('.previewarea');
+//         }
+//     });
+// });
+
+
+
+
+var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
+    mainImageRealHeight = $(".preview-mainimage_image").prop('naturalHeight');
+    mainImageScreenWidth = $(".preview-mainimage_image").prop('clientWidth');
+    mainImageScreenHeight = $(".preview-mainimage_image").prop('clientHeight');
+    wmRealWidth = $(".preview-watermark_image").prop('naturalWidth');
+    wmRealHeight = $(".preview-watermark_image").prop('naturalHeight');
+
+
+
+    scale = (mainImageScreenWidth / mainImageRealWidth).toFixed(4);
+
+    defaultWmPaddingX = 0;
+    defaultWmPaddingY = 0;
+    defaultWmX = 0;
+    defaultWmY = 0;
+
+    currentWmPaddingX = 0;
+    currentWmPaddingY = 0;
+    currentWmX = 0;
+    currentWmY = 0;
+
+    var getScreenDimension = function(realDimension) {
+        return Math.round(realDimension * scale);
+    }
+
+    var getRealDimension = function(screenDimension) {
+        return Math.round(screenDimension / scale);
+    }
+
+    wmScreenWidth = getScreenDimension(wmRealWidth);
+    wmScreenHeight = getScreenDimension(wmRealHeight);
+
+
+    $(".preview-watermark_image").css ({
+        width: wmScreenWidth,
+        height: wmScreenHeight
+    });
+
+
+$(".incremental-ipnut_wmpaddingX").val(defaultWmPaddingX);
+$(".incremental-ipnut_wmpaddingY").val(defaultWmPaddingY);
+$(".incremental-ipnut_wmposX").val(defaultWmX);
+$(".incremental-ipnut_wmposY").val(defaultWmY);
+
+
+// console.log($(".preview-watermark_image").css("margin-right"));
+// console.log($(".preview-watermark_image").css("margin-bottom"));
+
+
+var leftTop = {
+        screenX: 0,
+        screenY: 0,
+        realX: 0,
+        realY: 0
+};
+
+var leftCenter = {
+        screenX: 0,
+        screenY: 0.5 * (mainImageScreenHeight - wmScreenHeight),
+        realX: 0,
+        realY: getRealDimension(0.5 * (mainImageScreenHeight - wmScreenHeight))
+};
+
+var leftBottom = {
+        screenX: 0,
+        screenY: mainImageScreenHeight - wmScreenHeight,
+        realX: 0,
+        realY: getRealDimension(mainImageScreenHeight - wmScreenHeight)
+};
+
+var centerTop = {
+        screenX: 0.5 * (mainImageScreenWidth - wmScreenWidth),
+        screenY: 0,
+        realX: getRealDimension(0.5 * (mainImageScreenWidth - wmScreenWidth)),
+        realY: 0
+};
+
+var centerCenter = {
+        screenX: 0.5 * (mainImageScreenWidth - wmScreenWidth),
+        screenY: 0.5 * (mainImageScreenHeight - wmScreenHeight),
+        realX: getRealDimension(0.5 * (mainImageScreenWidth - wmScreenWidth)),
+        realY: getRealDimension(0.5 * (mainImageScreenHeight - wmScreenHeight))
+};
+
+var centerBottom = {
+        screenX: 0.5 * (mainImageScreenWidth - wmScreenWidth),
+        screenY: mainImageScreenHeight - wmScreenHeight,
+        realX: getRealDimension(0.5 * (mainImageScreenWidth - wmScreenWidth)),
+        realY: getRealDimension(mainImageScreenHeight - wmScreenHeight)
+};
+
+var rightTop = {
+        screenX: mainImageScreenWidth - wmScreenWidth,
+        screenY: 0,
+        realX: getRealDimension(mainImageScreenWidth - wmScreenWidth),
+        realY: 0
+};
+
+var rightCenter = {
+        screenX: mainImageScreenWidth - wmScreenWidth,
+        screenY: 0.5 * (mainImageScreenHeight - wmScreenHeight),
+        realX: getRealDimension(mainImageScreenWidth - wmScreenWidth),
+        realY: getRealDimension(0.5 * (mainImageScreenHeight - wmScreenHeight))
+};
+
+var rightBottom = {
+        screenX: mainImageScreenWidth - wmScreenWidth,
+        screenY: mainImageScreenHeight - wmScreenHeight,
+        realX: getRealDimension(mainImageScreenWidth - wmScreenWidth),
+        realY: getRealDimension(mainImageScreenHeight - wmScreenHeight)
+};
+
+function setFixedCoordinates(fixedPosition) {
+    console.log(fixedPosition);
+    $(".preview-wmarea").css({
+        left: fixedPosition.screenX + "px",
+        top: fixedPosition.screenY + "px"
+    }),
+    $(".incremental-ipnut_wmposX").val(fixedPosition.realX),
+    $(".incremental-ipnut_wmposY").val(fixedPosition.realY) 
+};
+
+$(".left-top").on('click', function() {
+    setFixedCoordinates(leftTop)
+});
+
+$(".left-center").on('click', function() {
+    setFixedCoordinates(leftCenter)
+    // $(".preview-wmarea").css({
+    //     left: leftCenter.screenX + "px",
+    //     top: leftCenter.screenY + "px"
+    // }),
+    // $(".incremental-ipnut_wmposX").val(leftCenter.realX),
+    // $(".incremental-ipnut_wmposY").val(leftCenter.realY)    
+    /* Act on the event */
+});
+
+$(".left-bottom").on('click', function() {
+    setFixedCoordinates(leftBottom)
+});
+
+$(".center-top").on('click', function() {
+    setFixedCoordinates(centerTop)
+});
+
+$(".center-center").on('click', function() {
+    setFixedCoordinates(centerCenter)
+});
+
+$(".center-bottom").on('click', function() {
+    setFixedCoordinates(centerBottom)
+});
+
+$(".right-top").on('click', function() {
+    setFixedCoordinates(rightTop)
+});
+
+$(".right-center").on('click', function() {
+    setFixedCoordinates(rightCenter)
+});
+
+$(".right-bottom").on('click', function() {
+    setFixedCoordinates(rightBottom)
+});
+
+$(".matrix-item").on('click', function() {
+    $this = $(this),
+    $this.addClass('matrix-item_active'),
+    $this.siblings().removeClass('matrix-item_active')
+    /* Act on the event */
+});
+
     $( "#slider-range" ).slider({
         range: "min",
         min: 0,
@@ -22,13 +236,67 @@ $(document).ready(function() {
     // $( "#minprice" ).val( $( "#slider-range" ).slider( "values", 0 ) + " руб.");
     // $( "#maxprice" ).val( $( "#slider-range" ).slider( "values", 1 ) + " руб.");
 
-    $( ".incremental-input" ).spinner ({
+    $( ".incremental-input" ).spinner({
         min: 0
     });
 
-    $( "#draggable" ).draggable({
-        containment: $(".preview-mainarea")
+    $(".incremental-ipnut_wmposX").on('spin', function(event, ui) {
+        var currentVal = (Math.round(ui.value*scale)) + 'px';
+        $(".preview-wmarea").css('left', currentVal);
+        $(".matrix-item").removeClass('matrix-item_active')
     });
+
+    $(".incremental-ipnut_wmposY").on('spin', function(event, ui) {
+        var currentVal = (Math.round(ui.value * scale)) + 'px';
+        $(".preview-wmarea").css('top', currentVal);
+        $(".matrix-item").removeClass('matrix-item_active')
+    });
+
+    $(".incremental-ipnut_wmpaddingX").on('spin', function(event, ui) {
+        // var currentWmPaddingX = parseInt($(".preview-watermark_image").css("margin-right"));
+        // increasedWmPaddingX = (currentWmPaddingX + 1) + "px";
+        // console.log(increasedWmPaddingX);
+        // $(".preview-watermark_image").css("margin-right","increasedWmPaddingX")
+
+        var currentVal = (Math.round(ui.value*scale)) + 'px';
+        $(".preview-watermark_image").css('margin-right', currentVal);
+        currentWmPaddingX = currentVal;
+        $(".horpadding").css('height', ui.value)
+        // $(".matrix-item").removeClass('matrix-item_active')
+    });
+
+    $(".incremental-ipnut_wmpaddingY").on('spin', function(event, ui) {
+        // var currentVal = (Math.round(ui.value*scale)) + 'px';
+        //$(".preview-wmarea").css('left', currentVal);
+        //$(".matrix-item").removeClass('matrix-item_active')
+
+        var currentVal = (Math.round(ui.value*scale)) + 'px';
+        $(".preview-watermark_image").css('margin-bottom', currentVal);
+        currentWmPaddingY = currentVal;
+        $(".verpadding").css('width', ui.value)
+
+    });
+
+    
+
+
+
+    $( "#draggable" ).draggable({
+        containment: $(".preview-mainarea"),
+        drag: function() {
+            // console.log(parseInt($(".preview-wmarea").css("top"))),
+            // console.log(parseInt($(".preview-wmarea").css("left")))
+            visualX = parseInt($(".preview-wmarea").css("left")),
+            coordX = Math.round(visualX / scale),
+            visualY = parseInt($(".preview-wmarea").css("top")),
+            coordY = Math.round(visualY / scale),
+
+            $(".incremental-ipnut_wmposX").val(coordX),
+            $(".incremental-ipnut_wmposY").val(coordY),
+            $(".matrix-item").removeClass('matrix-item_active')
+        }
+    });
+
 
     // var $inputFile = $('#imageupload-realinput');
     
@@ -42,14 +310,30 @@ $(document).ready(function() {
     //         $inputFile.focus();
     // });
 
-    var $inputFile = $('.imageupload-realinput');
-    $inputFile.on('change', function(){
-        var filepath = $inputFile.val(),
-        $input = $inputFile.siblings(".imageupload-fakeinput")
+    // var $inputFile = $('#imageupload-realinput');
+    // $inputFile.on('change', function(){
+    //     var filepath = $inputFile.val(),
+    //     $input = $inputFile.siblings("#imageupload-fakeinput")
 
+    //     filepath = filepath.replace(/c:\\fakepath\\/gmi, "");
+    //     $input.val(filepath);
+    // });
+
+    // var $inputFile = $('#imageupload-realinput');
+    $('.imageupload-realinput').on('change', function(){
+        $this = $(this);
+        console.log($this);
+        var filepath = $this.val(),
+        $input = $this.parent().find(".imageupload-fakeinput");
+        console.log($this.parent());
         filepath = filepath.replace(/c:\\fakepath\\/gmi, "");
         $input.val(filepath);
     });
+
+
+
+
+
 
     $('.product-slider__min-image').on('click', function(){
     var $this = $(this),
@@ -61,11 +345,6 @@ $(document).ready(function() {
         .addClass('product-slider__min-image-item_active')
         .siblings()
         .removeClass('product-slider__min-image-item_active')
-    });
-
-    $(function(){
-      $(".disclaimer-text").children().addClass("dontsplit");
-      $(".disclaimer-text").columnize({columns: 2});
     });
 
     setTimeout(function() {
