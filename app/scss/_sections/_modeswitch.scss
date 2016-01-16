@@ -1,0 +1,45 @@
+.modeswitch-container {
+	font-size: 0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+
+input[type="radio"] {
+    display:none;
+}
+
+	.mode-switch-label {
+		display: inline-block;
+		// position: relative;
+		width: 19px;
+		height: 19px;
+		cursor: pointer;
+
+		&_single {
+			background-image: url("/img/mode-single-default.png");
+			margin-right: 10px;
+
+			&:hover {
+				
+			}
+		}
+
+		&_multiple {
+			background-image: url("/img/mode-multiple-default.png");
+
+			&:hover {
+				
+			}
+		}
+	}
+
+
+input[type="radio"]:checked + label.mode-switch-label_single {
+	background-image: url("/img/mode-single-active.png");
+}
+
+input[type="radio"]:checked + label.mode-switch-label_multiple {
+	background-image: url("/img/mode-multiple-active.png");
+}
+
+}

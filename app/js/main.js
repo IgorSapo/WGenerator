@@ -49,6 +49,8 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
     wmRealWidth = $(".preview-watermark_image").prop('naturalWidth');
     wmRealHeight = $(".preview-watermark_image").prop('naturalHeight');
 
+    test = "5";
+    console.log("Initial value is " + test);
 
     scale = (mainImageScreenWidth / mainImageRealWidth).toFixed(4);
 
@@ -76,6 +78,9 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
     canvasScreenWidth = getScreenDimension(canvasRealWidth);
     canvasScreenHeight = getScreenDimension(canvasRealHeight);
 
+    $(".wmCanvasWidth-input_hidden").val(canvasRealWidth);
+    $(".wmCanvasHeight-input_hidden").val(canvasRealHeight);
+
     numberOfClones = (Math.round((canvasRealWidth * canvasRealHeight) / (wmRealWidth * wmRealWidth)))*2;
     console.log(numberOfClones);
 
@@ -89,6 +94,11 @@ var mainImageRealWidth = $(".preview-mainimage_image").prop('naturalWidth');
 console.log(containmentScreenLeft);
 console.log(containmentScreenTop);
 
+$(".position-control_multiple").css ('display', 'none');
+
+
+
+
     //canvasScreenWidth = 
 
     // var populateWm = function(cloneQuantity) {
@@ -96,17 +106,11 @@ console.log(containmentScreenTop);
     // };
     // var depopulateWm = null;
 
-$(".preview-mainarea_containment").css('width', containmentScreenWidth + "px");
-$(".preview-mainarea_containment").css('height', containmentScreenHeight + "px");
 
-$(".preview-mainarea_containment").css('left', containmentScreenLeft + 'px');
-$(".preview-mainarea_containment").css('top', containmentScreenTop + 'px');
 
-$(".preview-wmarea").css('width', canvasScreenWidth);
-$(".preview-wmarea").css('height', canvasScreenHeight);
+// $(".preview-wmarea").css('width', canvasScreenWidth);
+// $(".preview-wmarea").css('height', canvasScreenHeight);
 
-        for (var i = 0; i < numberOfClones; i++) {
-            $(".preview-watermark_image").clone().first().appendTo($(".preview-wmarea"))
 
             // console.log(i);
             // console.log(cloneQuantity);
@@ -117,7 +121,7 @@ $(".preview-wmarea").css('height', canvasScreenHeight);
             // .removeClass('preview-watermark_image')
             // .addClass('preview-watermark_image_clone')
             // .appendTo($(".preview-wmarea"))
-        };
+        
 
 
 
@@ -371,6 +375,106 @@ $(".matrix-item").on('click', function() {
             $(".matrix-item").removeClass('matrix-item_active')
         }
     });
+
+
+
+
+$(".mode-switch-label_multiple").on('click', function() {
+    $(".position-control_multiple").css ('display', 'flex');
+    $(".position-control_single").css ('display', 'none');
+    $(".preview-wmarea").css('width', canvasScreenWidth);
+    $(".preview-wmarea").css('height', canvasScreenHeight);
+
+    for (var i = 0; i < numberOfClones; i++) {
+        $(".preview-watermark_image").clone().first().appendTo($(".preview-wmarea"))
+    };
+
+    $(".preview-mainarea_containment").css('width', containmentScreenWidth + "px");
+    $(".preview-mainarea_containment").css('height', containmentScreenHeight + "px");
+    $(".preview-mainarea_containment").css('left', containmentScreenLeft + 'px');
+    $(".preview-mainarea_containment").css('top', containmentScreenTop + 'px');
+
+    test = "Multiple";
+    console.log("Test was changed to" + test);
+});
+
+
+
+
+$(".mode-switch-label_single").on('click', function() {
+    $(".position-control_multiple").css ('display', 'none');
+    $(".position-control_single").css ('display', 'flex');
+
+    $(".preview-wmarea").css({
+        'width': "auto",
+        'height': "auto",
+        'left': 0,
+        'top': 0,
+    });
+
+    $('.preview-watermark_image').not(':first').remove();
+    $('.preview-mainarea_containment').css({
+        "width": "100%",
+        "height": "100%",
+        "left": 0,
+        "top": 0
+    })
+
+    test = "Single";
+    console.log("Test was changed to" + test);
+});
+
+
+    var ajaxSubmit = function (submittedForm) { // Sumbit _valid_ form via ajax
+        console.log("Вызвана функция сабмита через ajax");
+        var str = $(submittedForm).serialize();
+        var urlPhp = $(submittedForm).attr("action");
+        console.log(urlPhp);
+        $.ajax ({
+                type: "POST",
+                cache: false,
+                url: urlPhp,
+                data: str,
+                success: function(serverResponse) {
+                    console.log(serverResponse);
+                }
+            });
+        $(submittedForm)[0].reset();
+    };
+
+    $(".button_submit").on('click', function(event) {
+        event.preventDefault();
+        console.log("Submit prevented");
+        var str = $(".wmsettings").serialize();
+        var urlPhp = $(".wmsettings").attr("action");
+        $.ajax ({
+                type: "POST",
+                cache: false,
+                url: urlPhp,
+                data: str //,
+                // success: function(serverResponse) {
+                //     console.log(serverResponse);
+                // }
+            });
+        console.log(str);
+        /* Act on the event */
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // var $inputFile = $('#imageupload-realinput');
