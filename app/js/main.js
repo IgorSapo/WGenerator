@@ -397,10 +397,10 @@ $(".matrix-item").on('click', function() {
     // var $inputFile = $('#imageupload-realinput');
     $('.imageupload-realinput').on('change', function(){
         $this = $(this);
-        console.log($this);
+        //console.log($this);
         var filepath = $this.val(),
         $input = $this.parent().find(".imageupload-fakeinput");
-        console.log($this.parent());
+       // console.log($this.parent());
         filepath = filepath.replace(/c:\\fakepath\\/gmi, "");
         $input.val(filepath);
     });
