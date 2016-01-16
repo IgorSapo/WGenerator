@@ -4,7 +4,7 @@ var Saveimg = (function(){
 		_setUplisteners();
 	},
 		_setUplisteners = function(){
-			$('#mainimage-realinput').on('change', _saveFile)
+			$('.imageupload-realinput').on('change', _saveFile)
 		},
 
 		_saveFile = function(event){
@@ -24,7 +24,7 @@ var Saveimg = (function(){
 			//fd.append('img', $inptfile.prop('files')[0]);
 
 				$.ajax({
-					url:"../app/php/upload.php",
+					url:"php/upload.php",
 					type:"POST",
 					dataType: 'json',
 					data:fd,
