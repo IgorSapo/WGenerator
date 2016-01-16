@@ -96,7 +96,7 @@ console.log(containmentScreenTop);
 
 $(".position-control_multiple").css ('display', 'none');
 
-
+// $('.imgSessionName-input_hidden').val($(".preview-mainimage_image").attr('src'));
 
 
     //canvasScreenWidth = 

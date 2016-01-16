@@ -24,7 +24,7 @@ var Saveimg = (function(){
 			//fd.append('img', $inptfile.prop('files')[0]);
 
 				$.ajax({
-					url:"../app/php/upload.php",
+					url:"../php/upload.php",
 					type:"POST",
 					dataType: 'json',
 					data:fd,
@@ -37,6 +37,7 @@ var Saveimg = (function(){
 					var urlimg = answer.url
 
 					$('.preview-mainimage_image').attr('src',urlimg);
+					$('.imgSessionName-input_hidden').val(urlimg);
 				})
 				.fail(function(answer){
 					console.log(answer);
