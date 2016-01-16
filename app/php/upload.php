@@ -2,13 +2,13 @@
 //Загрузка изображений на сервер, валидация.
 
 session_start();
-$path_folder = "../img/";  // путь к файлу
+$path_folder = "img/";  // путь к файлу
 
 $filename = basename($_FILES[0]["name"]); // имя файла
 $id_session = session_id(); // уникализированное имя директории для файлов юзера
 $tmp_file = $_FILES[0]["tmp_name"];  // временный файл
 
-$path_file = $path_folder. $id_session . $filename; // путь и имя будущего файла
+$path_file = "../" . $path_folder. $id_session . $filename; // путь и имя будущего файла
 $path_url = $path_folder . $id_session . $filename;          // url к будущему файлу
 
 $answer =  array();  // ответ от сервера
@@ -32,6 +32,7 @@ else{
 		$answer['filename'] = $filename;
         $answer['tmpfile'] = $tmp_file;
         $answer['path'] = $path_file;
+        $answer['url'] = $path_url;
 
 //$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 echo json_encode($answer);

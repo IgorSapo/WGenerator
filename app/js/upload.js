@@ -29,14 +29,14 @@ var Saveimg = (function(){
 					dataType: 'json',
 					data:fd,
 					processData: false, // не обрабатывать файлы
-        			contentType: false, // не отправлять стрингреквест
-        			success: function(data){
-						    alert( "Прибыли данные: " + data );
-						}
+        			contentType: false // не отправлять стрингреквест
 				})
 				.done(function(answer){
-					console.log(answer);
+					console.log(answer.url);
 					console.log("выполнено");
+					var urlimg = answer.url
+
+					$('.preview-mainimage_image').attr('src',urlimg);
 				})
 				.fail(function(answer){
 					console.log(answer);
