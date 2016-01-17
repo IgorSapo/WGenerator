@@ -489,11 +489,11 @@ $(".mode-switch-label_single").on('click', function() {
         $.ajax ({
                 type: "POST",
                 cache: false,
-                url: urlPhp,
-                data: str //,
-                // success: function(serverResponse) {
-                //     console.log(serverResponse);
-                // }
+                url: "php/wgenerator.php",
+                data: str, //,
+                 success: function(serverResponse) {
+                     console.log(serverResponse);
+                 }
             });
         console.log(str);
         /* Act on the event */

@@ -4,7 +4,7 @@ var Saveimg = (function(){
 		_setUplisteners();
 	},
 		_setUplisteners = function(){
-			$('#mainimage-realinput').on('change', _saveFile)
+			$('.imageupload-realinput').on('change', _saveFile)
 		},
 
 		_saveFile = function(event){
@@ -16,7 +16,6 @@ var Saveimg = (function(){
 
 			var inptfile = this,
 				imgID = this.dataset['img'], // id изображения
-				fakeinputID = this.dataset['fakeinput'], //fakeinput
 				fd = new FormData;
 
 				
@@ -24,7 +23,7 @@ var Saveimg = (function(){
 			//fd.append('img', $inptfile.prop('files')[0]);
 
 				$.ajax({
-					url:"../php/upload.php",
+					url:"php/upload.php",
 					type:"POST",
 					dataType: 'json',
 					data:fd,
