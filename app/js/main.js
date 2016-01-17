@@ -491,15 +491,20 @@ $(".mode-switch-label_single").on('click', function() {
                 cache: false,
                 url: "php/wgenerator.php",
                 data: str, //,
-                 success: function(serverResponse) {
-                     console.log(serverResponse);
+                success: function(answer) {
+                     //console.log(serverResponse);
+                     console.log(answer);
+                     _imgDownload(encodeURIComponent(answer));
                  }
             });
         console.log(str);
         /* Act on the event */
     });
 
-
+        var _imgDownload = function(fname) {
+        var href = "php/saveimg.php" + '?fname=' + fname;
+        window.open(href, '_self');
+    };
 
 
 

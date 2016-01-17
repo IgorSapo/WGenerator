@@ -1,10 +1,12 @@
 h3.controlpanel-subheader Исходное изображение
 .imageupload-wrapper.mainimage-upload
-	input(type="text" id="imageupload-fakeinput" class="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainImageShortName" required)
+	input(type="text" class="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainImageShortName" required)
+	//- id="imageupload-fakeinput"
 	label(for="mainimage-realinput" class="imageupload-button")
-	input(id="mainimage-realinput" type="file" class="imageupload-realinput" name="mainimagerealname")
+	input(id="mainimage-realinput" class="imageupload-realinput" data-imgclass="mainimage" type="file" name="mainImageRealName")
 h3.controlpanel-subheader Водяной знак
 .imageupload-wrapper.watermark-upload
-	input(type="text" id="imageupload-fakeinput" class="imageupload-fakeinput" placeholder="Загрузите изображение" name="WatermarkShortName" required)
+	input(type="text" class="imageupload-fakeinput" placeholder="Загрузите изображение" name="WatermarkShortName" required)
+	//- id="imageupload-fakeinput"
 	label(for="wmimage-realinput" class="imageupload-button")
-	input(id="wmimage-realinput" type="file" class="imageupload-realinput" name="mainimagerealname")
+	input(id="wmimage-realinput" class="imageupload-realinput" data-imgclass="watermark" type="file" name="wmImageRealName")

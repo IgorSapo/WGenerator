@@ -8,15 +8,19 @@ var Saveimg = (function(){
 		},
 
 		_saveFile = function(event){
-				event.preventDefault();
-		if (!this.files[0]) {
-            console.log("Не выбран файл для загрузки");
-            return;
-        };
+
+			event.preventDefault();
+
+			if (!this.files[0]) {
+	            console.log("Не выбран файл для загрузки");
+	            return;
+	        };
 
 			var inptfile = this,
 				imgID = this.dataset['img'], // id изображения
 				fd = new FormData;
+				imgClass = this.getAttribute('data-imgclass');
+				console.log(imgClass);
 
 				
 			fd.append(0, this.files[0]);
@@ -35,8 +39,19 @@ var Saveimg = (function(){
 					console.log("выполнено");
 					var urlimg = answer.url
 
-					$('.preview-mainimage_image').attr('src',urlimg);
-					$('.imgSessionName-input_hidden').val(urlimg);
+					if (imgClass == "mainimage") {
+						$('.preview-mainimage_image').attr('src',urlimg);
+						$('#imgSessionName').val(urlimg);
+					} 
+
+					else if (imgClass == "watermark") {
+						$('.preview-watermark_image').attr('src',urlimg);
+						$('#wmImgSessionName').val(urlimg);
+					}
+
+
+					
+
 				})
 				.fail(function(answer){
 					console.log(answer);

@@ -32,15 +32,15 @@
 							<div class="controlpanel-item imageupload">
 								<h3 class="controlpanel-subheader">Исходное изображение</h3>
 								<div class="imageupload-wrapper mainimage-upload">
-									<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainImageShortName" required class="imageupload-fakeinput">
+									<input type="text" placeholder="Загрузите изображение" name="mainImageShortName" required class="imageupload-fakeinput">
 									<label for="mainimage-realinput" class="imageupload-button"></label>
-									<input id="mainimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
+									<input id="mainimage-realinput" data-imgclass="mainimage" type="file" name="mainImageRealName" class="imageupload-realinput">
 								</div>
 								<h3 class="controlpanel-subheader">Водяной знак</h3>
 								<div class="imageupload-wrapper watermark-upload">
-									<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="WatermarkShortName" required class="imageupload-fakeinput">
+									<input type="text" placeholder="Загрузите изображение" name="WatermarkShortName" required class="imageupload-fakeinput">
 									<label for="wmimage-realinput" class="imageupload-button"></label>
-									<input id="wmimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
+									<input id="wmimage-realinput" data-imgclass="watermark" type="file" name="wmImageRealName" class="imageupload-realinput">
 								</div>
 							</div>
 							<div class="controlpanel-item position">
@@ -106,6 +106,7 @@
 								<input id="wmCanvasWidth" type="hidden" name="WatermarkCanvasWidth" value="" class="wmCanvasWidth-input_hidden">
 								<input id="wmCanvasHeight" type="hidden" name="WatermarkCanvasHeight" value="" class="wmCanvasHeight-input_hidden">
 								<input id="imgSessionName" type="hidden" name="imgSessionName" value="" class="imgSessionName-input_hidden">
+								<input id="wmImgSessionName" type="hidden" name="wmImgSessionName" value="" class="imgSessionName-input_hidden">
 							</div>
 							<div class="controlpanel-item opacity">
 								<h3 class="controlpanel-subheader">Прозрачность</h3>
