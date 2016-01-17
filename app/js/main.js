@@ -1,5 +1,50 @@
 $(document).ready(function() {
 
+    $("#imageupload-realinput").on('change', function(event) {
+        event.preventDefault();
+
+        if (!this.files[0]) {
+            console.log("Не выбран файл для загрузки");
+            return;
+        };
+
+        var
+            input = this,    // текущий инпут
+            imgID = this.dataset['img'],  // id изображения, соответствующего инпуту
+            realinputID = this.dataset['realinput'], // id  инпута, соответствующего текщему
+            data = new FormData();  // данные для запроса
+
+
+        preloader.start();
+
+        // сформировать данные для запроса
+        data.append(0, this.files[0]);
+        data.append('uploadDir', app.UPLOAD_DIR);
+        data.append('maxSize', app.FILE_MAX_SIZE);
+        data.append('maxWidth', app[imgID].container.width);
+        data.append('maxHeight', app[imgID].container.height);
+
+        // выполнить ajax-запрос
+        $.ajax({
+            url: app.URL_UPLOAD_REQUEST,
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            processData: false, // не обрабатывать файлы
+            contentType: false  // установить в false, т.к. jQuery отправит серверу query string request
+        })
+
+        .done( function(answer) {
+            if (answer.status === 'OK') {
+
+            // изменить текст фэйкового инпута на имя сохраненного файла
+            $('#'+realinputID).text(answer.filename);
+
+            // сохраняем данные картинки в общих переменных
+            app[imgID].url = answer.url;
+            app[imgID].filename = answer.filename;
+            app[imgID].width = answer.width;
+            app[imgID].height = answer.height;
     $( "#slider-range" ).slider({
         range: "min",
         min: 0,
@@ -101,3 +146,4 @@ $(document).ready(function() {
 })();
 
 })
+
