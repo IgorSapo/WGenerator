@@ -1,22 +1,23 @@
 .controlpanel
 	form(action="php/upload.php" class="wmsettings" method="POST" enctype="multipart/form-data")
-		h2.controlpanel-header Настройки
-		.controlpanel-item.imageupload
-			//- input(id="fileupload" type="file" name="files[]" data-url="server/php/" multiple)
-			include mainimage
-			//- include watermark
-		.controlpanel-item.position
-			h3.controlpanel-subheader Положение
-			include modeswitch
-			include singleimage
-			include multipleimage
-			input(id="wmCanvasWidth" class="wmCanvasWidth-input_hidden" type="hidden" name="WatermarkCanvasWidth" value="")
-			input(id="wmCanvasHeight" class="wmCanvasHeight-input_hidden" type="hidden" name="WatermarkCanvasHeight" value="")
-			input(id="imgSessionName" class="imgSessionName-input_hidden" type="hidden" name="imgSessionName" value="")
-		.controlpanel-item.opacity
-			h3.controlpanel-subheader Прозрачность
-			div#slider-range
-			input(id="opacityvalue" name="opacity" value="0.5")
-		.buttons
-			button(type="reset" class="button button_reset") Сброс
-			button(type="sumbit" class="button button_submit") Скачать
+		.form-wrapper
+			h2.controlpanel-header Настройки
+			.controlpanel-item.imageupload
+				//- input(id="fileupload" type="file" name="files[]" data-url="server/php/" multiple)
+				include mainimage
+				//- include watermark
+			.controlpanel-item.position
+				h3.controlpanel-subheader Положение
+				include modeswitch
+				include singleimage
+				include multipleimage
+				input(id="wmCanvasWidth" class="wmCanvasWidth-input_hidden" type="hidden" name="WatermarkCanvasWidth" value="")
+				input(id="wmCanvasHeight" class="wmCanvasHeight-input_hidden" type="hidden" name="WatermarkCanvasHeight" value="")
+				input(id="imgSessionName" class="imgSessionName-input_hidden" type="hidden" name="imgSessionName" value="")
+			.controlpanel-item.opacity
+				h3.controlpanel-subheader Прозрачность
+				div#slider-range
+				input(id="opacityvalue" name="opacity" value="0.5" type="hidden")
+			.controlpanel-item.button-wrapper
+				button(type="reset" class="button button_reset") Сброс
+				button(type="sumbit" class="button button_submit") Скачать

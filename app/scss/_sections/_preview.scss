@@ -2,11 +2,23 @@
 	width: 700px;
 	height: 670px;
 	background-color: #676162;
-	padding: 27px 24px;
+	padding: 13px 24px 25px 24px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
 
 	&-header {
 		color: white;
+		font-family: Roboto;
 		font-size: 36px;
+		font-weight: 300;
+		margin: 0;
+	}
+
+	&-error {
+		color: white;
+		font-family: Roboto;
+		font-size: 16px;
 		font-weight: 300;
 		margin: 0;
 	}

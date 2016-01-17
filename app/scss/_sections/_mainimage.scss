@@ -1,6 +1,12 @@
+.mainimage-upload {
+	margin-bottom: 22px;
+}
+
 .imageupload-wrapper {
 	display: flex;
 	flex-flow: row wrap;
+
+
 
 	.imageupload-fakeinput {
 		border-radius: 3px 0 0 3px;
@@ -8,6 +14,11 @@
 		border-right: none;
 		width: 180px;
 		height: 27px;
+		font-family: Roboto;
+		color: #9eb2c0;
+		font-size: 12px;
+		font-weight: 300;
+		padding-left: 5px;
 	}
 
 	.imageupload-button {

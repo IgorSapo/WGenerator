@@ -5,14 +5,20 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
+	padding-top: 23px;
 
+	.form-wrapper {
+		display: flex;
+		flex-flow: column nowrap;
+	}
 
 	&-header {
+		align-self: center;
 		font-family: Roboto;
 		font-size: 26px;
 		font-weight: 300;
 		color: #2e3742;
-		margin: 0;
+		margin: 0 0 17px 0;
 	}
 
 	&-subheader {
@@ -20,14 +26,37 @@
 		color: rgba(46, 54, 65, 0.64);
 		font-size: 14px;
 		font-weight: 300;
-		margin: 0;
+		margin: 0 0 7px 0;
+		padding: 0;
 	}
 
 	&-item {
 		width: 100%;
 		border-bottom: 1px solid #f7bbc1;
-		padding: 14px 21px 14px 19px;
+		padding: 14px 19px 31px 20px;
 		position: relative;
+
+		&:after {
+			content: "";
+			width: 13px;
+			height: 13px;
+			// line-height: 18px;
+			border-bottom: 1px solid #f7bbc1;
+			border-left: 1px solid #f7bbc1;
+			position: absolute;
+			bottom: -8px;
+			left: 124px;
+			background-color: #f1f0f5;
+			transform: rotate(-45deg);
+		}
+
+		&:last-child {
+			border-bottom: none;
+
+			&:after {
+				display: none;
+			}
+		}
 	}
 
 		// .pricerange-container {
@@ -44,6 +73,7 @@
 			height: 3px;
 			background: #dce2e9;
 			margin-bottom: 13px;
+			margin-top: 29px;
 
 			.ui-slider-handle/* .ui-state-default */ {
 				position: absolute;
@@ -68,4 +98,32 @@
 				position: absolute;
 			}
 		}
+	
+	.button-wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		margin-top: 40px;
+	}
+
+	.button {
+		border-radius: 3px;
+		width: 99px;
+		height: 42px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 18px;
+		font-weight: 500;
+		color: rgba(241, 241, 245, 0.7);
+		font-family: Roboto;
+		border: none;
+
+		&_reset {
+			background-color: #c1cfd9;
+		}
+
+		&_submit {
+			background-color: #f97e76;
+		}
+	}
 }

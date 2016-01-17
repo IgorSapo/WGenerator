@@ -460,26 +460,51 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  padding-top: 23px;
+}
+.controlpanel .form-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
 }
 .controlpanel-header {
+  align-self: center;
   font-family: Roboto;
   font-size: 26px;
   font-weight: 300;
   color: #2e3742;
-  margin: 0;
+  margin: 0 0 17px 0;
 }
 .controlpanel-subheader {
   font-family: Roboto;
   color: rgba(46, 54, 65, 0.64);
   font-size: 14px;
   font-weight: 300;
-  margin: 0;
+  margin: 0 0 7px 0;
+  padding: 0;
 }
 .controlpanel-item {
   width: 100%;
   border-bottom: 1px solid #f7bbc1;
-  padding: 14px 21px 14px 19px;
+  padding: 14px 19px 31px 20px;
   position: relative;
+}
+.controlpanel-item:after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-bottom: 1px solid #f7bbc1;
+  border-left: 1px solid #f7bbc1;
+  position: absolute;
+  bottom: -8px;
+  left: 124px;
+  background-color: #f1f0f5;
+  transform: rotate(-45deg);
+}
+.controlpanel-item:last-child {
+  border-bottom: none;
+}
+.controlpanel-item:last-child:after {
+  display: none;
 }
 .controlpanel .ui-slider {
   position: relative;
@@ -488,6 +513,7 @@ ul {
   height: 3px;
   background: #dce2e9;
   margin-bottom: 13px;
+  margin-top: 29px;
 }
 .controlpanel .ui-slider .ui-slider-handle {
   position: absolute;
@@ -507,9 +533,33 @@ ul {
   background: #9fb4c1;
   position: absolute;
 }
+.controlpanel .button-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.controlpanel .button {
+  border-radius: 3px;
+  width: 99px;
+  height: 42px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(241, 241, 245, 0.7);
+  font-family: Roboto;
+  border: none;
+}
+.controlpanel .button_reset {
+  background-color: #c1cfd9;
+}
+.controlpanel .button_submit {
+  background-color: #f97e76;
+}
 
-.imageupload {
-  height: 180px;
+.mainimage-upload {
+  margin-bottom: 22px;
 }
 
 .imageupload-wrapper {
@@ -522,6 +572,11 @@ ul {
   border-right: none;
   width: 180px;
   height: 27px;
+  font-family: Roboto;
+  color: #9eb2c0;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 5px;
 }
 .imageupload-wrapper .imageupload-button {
   background-color: #f97e76;
@@ -579,11 +634,22 @@ ul {
   width: 700px;
   height: 670px;
   background-color: #676162;
-  padding: 27px 24px;
+  padding: 13px 24px 25px 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 .preview-header {
   color: white;
+  font-family: Roboto;
   font-size: 36px;
+  font-weight: 300;
+  margin: 0;
+}
+.preview-error {
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
   font-weight: 300;
   margin: 0;
 }
@@ -637,7 +703,8 @@ ul {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin-top: 38px;
+  margin-top: 35px;
+  margin-bottom: 4px;
 }
 .position-control .matrix-control .matrix-container {
   width: 101px;
@@ -700,6 +767,9 @@ ul {
   align-items: center;
   margin-bottom: 12px;
 }
+.position-control .incremental-item:last-child {
+  margin-bottom: 0;
+}
 .position-control .incremental-item .incremental-label {
   display: block;
 }
@@ -754,6 +824,11 @@ ul {
   width: 46px;
   height: 45px;
   border-radius: 3px;
+  color: #444a53;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: Roboto;
+  text-align: center;
 }
 .position-control .incremental-item .incremental-buttons {
   display: flex;
@@ -763,6 +838,10 @@ ul {
   margin-left: 6px;
 }
 
+html {
+  font-family: Roboto;
+}
+
 .wrapper {
   background: transparent url("../img/background.jpg") repeat scroll center top/cover;
   min-height: 100%;
@@ -770,6 +849,7 @@ ul {
   overflow: hidden;
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .appwindow {
@@ -781,6 +861,18 @@ ul {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
+}
+
+.copyright {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: Roboto;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  text-align: center;
 }
 
 .clearfix:after {

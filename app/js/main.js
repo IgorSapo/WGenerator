@@ -231,6 +231,18 @@ var rightBottom = {
         realY: getRealDimension(mainImageScreenHeight - wmScreenHeight)
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
 function setFixedCoordinates(fixedPosition) {
     console.log(fixedPosition);
     $(".preview-wmarea").css({
@@ -238,58 +250,76 @@ function setFixedCoordinates(fixedPosition) {
         top: fixedPosition.screenY + "px"
     }),
     $(".incremental-ipnut_wmposX").val(fixedPosition.realX),
-    $(".incremental-ipnut_wmposY").val(fixedPosition.realY) 
+    $(".incremental-ipnut_wmposY").val(fixedPosition.realY)
 };
 
+
+
+
+
+
+
+
+
+
 $(".left-top").on('click', function() {
-    setFixedCoordinates(leftTop)
+    $this = $(this),
+    setFixedCoordinates(leftTop),
+    setActiveItem($this)
 });
 
 $(".left-center").on('click', function() {
-    setFixedCoordinates(leftCenter)
-    // $(".preview-wmarea").css({
-    //     left: leftCenter.screenX + "px",
-    //     top: leftCenter.screenY + "px"
-    // }),
-    // $(".incremental-ipnut_wmposX").val(leftCenter.realX),
-    // $(".incremental-ipnut_wmposY").val(leftCenter.realY)    
-    /* Act on the event */
+    $this = $(this),
+    setFixedCoordinates(leftCenter),
+    setActiveItem($this)
 });
 
 $(".left-bottom").on('click', function() {
-    setFixedCoordinates(leftBottom)
+    $this = $(this),
+    setFixedCoordinates(leftBottom),
+    setActiveItem($this)
 });
 
 $(".center-top").on('click', function() {
-    setFixedCoordinates(centerTop)
+    $this = $(this),
+    setFixedCoordinates(centerTop),
+    setActiveItem($this)
 });
 
 $(".center-center").on('click', function() {
-    setFixedCoordinates(centerCenter)
+    $this = $(this),
+    setFixedCoordinates(centerCenter),
+    setActiveItem($this)
 });
 
 $(".center-bottom").on('click', function() {
-    setFixedCoordinates(centerBottom)
+    $this = $(this),
+    setFixedCoordinates(centerBottom),
+    setActiveItem($this)
 });
 
 $(".right-top").on('click', function() {
-    setFixedCoordinates(rightTop)
+    $this = $(this),
+    setFixedCoordinates(rightTop),
+    setActiveItem($this)
 });
 
 $(".right-center").on('click', function() {
-    setFixedCoordinates(rightCenter)
+    $this = $(this),
+    setFixedCoordinates(rightCenter),
+    setActiveItem($this)
 });
 
 $(".right-bottom").on('click', function() {
-    setFixedCoordinates(rightBottom)
+    $this = $(this),
+    setFixedCoordinates(rightBottom),
+    setActiveItem($this)
 });
 
-$(".matrix-item").on('click', function() {
-    $this = $(this),
-    $this.addClass('matrix-item_active'),
-    $this.siblings().removeClass('matrix-item_active')
-    /* Act on the event */
-});
+function setActiveItem(matrixItem) {
+    matrixItem.addClass('matrix-item_active'),
+    matrixItem.siblings().removeClass('matrix-item_active')
+};
 
     $( "#slider-range" ).slider({
         range: "min",
@@ -353,7 +383,6 @@ $(".matrix-item").on('click', function() {
         $(".preview-watermark_image").css('margin-bottom', currentVal);
         currentWmPaddingY = currentVal;
         $(".verpadding").css('height', ui.value)
-
     });
 
     
@@ -418,7 +447,17 @@ $(".mode-switch-label_single").on('click', function() {
         "height": "100%",
         "left": 0,
         "top": 0
-    })
+    });
+    $(".incremental-ipnut_wmposX").val(0),
+    $(".incremental-ipnut_wmposY").val(0),
+    $(".preview-watermark_image").css('margin-bottom', 0);
+    $(".preview-watermark_image").css('margin-right', 0);
+    $(".horpadding").css('width', 0);
+    $(".verpadding").css('height', 0);
+    $(".incremental-ipnut_wmpaddingX").attr("aria-valuenow", 0);
+    $(".incremental-ipnut_wmpaddingX").val(0);
+    $(".incremental-ipnut_wmpaddingY").attr("aria-valuenow", 0);
+    $(".incremental-ipnut_wmpaddingY").val(0);
 
     test = "Single";
     console.log("Test was changed to" + test);

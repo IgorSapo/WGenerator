@@ -19,6 +19,10 @@
 
 @import "_sections/**/*";
 
+html {
+	font-family: Roboto;
+}
+
 .wrapper {
 	background: transparent url("../img/background.jpg") repeat scroll center top / cover;
 	min-height: 100%;
@@ -26,6 +30,7 @@
 	overflow: hidden;
 	width: 100%;
 	display: flex;
+	position: relative;
 }
 
 .appwindow {
@@ -38,6 +43,18 @@
 	flex-wrap: nowrap;
 	// align-items: stretch;
 	justify-content: flex-start;
+}
+
+.copyright {
+	color: #FFF;
+	font-size: 12px;
+	font-weight: 300;
+	font-family: Roboto;
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	text-align: center;
 }
 
 .clearfix:after {
