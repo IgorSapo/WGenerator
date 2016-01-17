@@ -30,8 +30,8 @@ $opacity = $_POST['watermark-mode'] * 100;
 
 
 // открываем картинки
-$mainpic = ImageWorkshop::initFromPath(__DIR__."../../".$img_main_path);
-$wtmpic = ImageWorkshop::initFromPath(__DIR__."../../".$img_watmark_path);
+$mainpic = ImageWorkshop::initFromPath((dirname(__DIR__))."/".$img_main_path);
+$wtmpic = ImageWorkshop::initFromPath((dirname(__DIR__))."/".$img_watmark_path);
 
 // параметры файлов
 /*$main_width = $mainpic->getWidth();
@@ -49,7 +49,7 @@ $mainpic->addLayerOnTop($wtmpic, 60, 600);
 
 
 // Saving the result
-$dirPath = __DIR__."../../".$dirout;
+$dirPath = (dirname(__DIR__))."/".$dirout;
 $createFolders = true;
 $backgroundColor = null; // transparent, only for PNG (otherwise it will be white if set null)
 $imageQuality = 95; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
