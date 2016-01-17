@@ -16,7 +16,6 @@ var Saveimg = (function(){
 
 			var inptfile = this,
 				imgID = this.dataset['img'], // id изображения
-				fakeinputID = this.dataset['fakeinput'], //fakeinput
 				fd = new FormData;
 
 				
@@ -37,6 +36,7 @@ var Saveimg = (function(){
 					var urlimg = answer.url
 
 					$('.preview-mainimage_image').attr('src',urlimg);
+					$('.imgSessionName-input_hidden').val(urlimg);
 				})
 				.fail(function(answer){
 					console.log(answer);

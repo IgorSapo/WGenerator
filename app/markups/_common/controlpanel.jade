@@ -7,8 +7,12 @@
 			//- include watermark
 		.controlpanel-item.position
 			h3.controlpanel-subheader Положение
+			include modeswitch
 			include singleimage
 			include multipleimage
+			input(id="wmCanvasWidth" class="wmCanvasWidth-input_hidden" type="hidden" name="WatermarkCanvasWidth" value="")
+			input(id="wmCanvasHeight" class="wmCanvasHeight-input_hidden" type="hidden" name="WatermarkCanvasHeight" value="")
+			input(id="imgSessionName" class="imgSessionName-input_hidden" type="hidden" name="imgSessionName" value="")
 		.controlpanel-item.opacity
 			h3.controlpanel-subheader Прозрачность
 			div#slider-range

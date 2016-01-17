@@ -2,7 +2,7 @@
 //Загрузка изображений на сервер, валидация.
 
 session_start();
-$path_folder = "img/";  // путь к файлу
+$path_folder = "upload/";  // путь к файлу
 
 $filename = basename($_FILES[0]["name"]); // имя файла
 $id_session = session_id(); // уникализированное имя директории для файлов юзера

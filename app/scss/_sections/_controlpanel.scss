@@ -6,6 +6,7 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 
+
 	&-header {
 		font-family: Roboto;
 		font-size: 26px;
@@ -25,7 +26,8 @@
 	&-item {
 		width: 100%;
 		border-bottom: 1px solid #f7bbc1;
-		padding: 20px;
+		padding: 14px 21px 14px 19px;
+		position: relative;
 	}
 
 		// .pricerange-container {

@@ -30,20 +30,26 @@
 						<div class="controlpanel-item imageupload">
 							<h3 class="controlpanel-subheader">Исходное изображение1</h3>
 							<div class="imageupload-wrapper mainimage-upload">
-								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainImageShortName" required class="imageupload-fakeinput">
 								<label for="mainimage-realinput" class="imageupload-button"></label>
 								<input id="mainimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
 							</div>
 							<h3 class="controlpanel-subheader">Водяной знак</h3>
 							<div class="imageupload-wrapper watermark-upload">
-								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="mainimageshortname" required class="imageupload-fakeinput">
+								<input type="text" id="imageupload-fakeinput" placeholder="Загрузите изображение" name="WatermarkShortName" required class="imageupload-fakeinput">
 								<label for="wmimage-realinput" class="imageupload-button"></label>
 								<input id="wmimage-realinput" type="file" name="mainimagerealname" class="imageupload-realinput">
 							</div>
 						</div>
 						<div class="controlpanel-item position">
 							<h3 class="controlpanel-subheader">Положение</h3>
-							<div class="singleimage">
+							<div class="modeswitch-container">
+								<input data-mode="watermark-single" type="radio" id="watermark-single" name="watermark-mode" value="single" checked class="mode-switch-radio">
+								<label for="watermark-single" data-view="single" class="mode-switch-label mode-switch-label_single"></label>
+								<input data-mode="watermark-multiple" type="radio" id="watermark-multiple" name="watermark-mode" value="multiple" class="mode-switch-radio">
+								<label for="watermark-multiple" data-view="multiple" class="mode-switch-label mode-switch-label_multiple"></label>
+							</div>
+							<div class="position-control position-control_single">
 								<div class="matrix-control">
 									<div class="matrix-container">
 										<div class="matrix-item left-top"></div>
@@ -55,29 +61,49 @@
 										<div class="matrix-item left-bottom"></div>
 										<div class="matrix-item center-bottom"></div>
 										<div class="matrix-item right-bottom"></div>
+									</div>
+								</div>
+								<div class="incremental">
+									<div class="incremental-item incremental-item_wmposX">
+										<label class="incremental-label incremental-label_wmposX">X</label>
+										<input id="spinner" type="text" name="wmposX" class="incremental-input incremental-ipnut_wmposX">
+									</div>
+									<div class="incremental-item incremental-item_wmposY">
+										<label class="incremental-label incremental-label_wmposY">Y</label>
+										<input id="spinner" type="text" name="wmposY" class="incremental-input incremental-ipnut_wmposY">
+									</div>
+								</div>
+							</div>
+							<div class="position-control position-control_multiple">
+								<div class="matrix-control">
+									<div class="matrix-container">
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
+										<div class="matrix-item"></div>
 										<div class="verpadding"></div>
 										<div class="horpadding"></div>
 									</div>
 								</div>
 								<div class="incremental">
-									<div class="incremental-item">
-										<label class="incremental-label incremental-label_wmposX">X</label>
-										<input id="spinner" type="text" name="wmposX-value" class="incremental-input incremental-ipnut_wmposX">
-									</div>
-									<div class="incremental-item">
-										<label class="incremental-label incremental-label_wmposY">Y</label>
-										<input id="spinner" type="text" name="wmposY-value" class="incremental-input incremental-ipnut_wmposY">
-									</div>
-									<div class="incremental-item">
+									<div class="incremental-item incremental-item_wmpaddingX">
 										<label class="incremental-label incremental-label_wmpaddingX"></label>
-										<input id="spinner" type="text" name="wmpaddingX-value" class="incremental-input incremental-ipnut_wmpaddingX">
+										<input id="spinner" type="text" name="wmpaddingX" class="incremental-input incremental-ipnut_wmpaddingX">
 									</div>
-									<div class="incremental-item">
+									<div class="incremental-item incremental-item_wmpaddingY">
 										<label class="incremental-label incremental-label_wmpaddingY"></label>
-										<input id="spinner" type="text" name="wmpaddingY-value" class="incremental-input incremental-ipnut_wmpaddingY">
+										<input id="spinner" type="text" name="wmpaddingY" class="incremental-input incremental-ipnut_wmpaddingY">
 									</div>
 								</div>
 							</div>
+							<input id="wmCanvasWidth" type="hidden" name="WatermarkCanvasWidth" value="" class="wmCanvasWidth-input_hidden">
+							<input id="wmCanvasHeight" type="hidden" name="WatermarkCanvasHeight" value="" class="wmCanvasHeight-input_hidden">
+							<input id="imgSessionName" type="hidden" name="imgSessionName" value="" class="imgSessionName-input_hidden">
 						</div>
 						<div class="controlpanel-item opacity">
 							<h3 class="controlpanel-subheader">Прозрачность</h3>

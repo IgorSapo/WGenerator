@@ -1,7 +1,8 @@
-.singleimage {
+.position-control {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
+	margin-top: 38px;
 
 	.matrix-control {
 
@@ -77,6 +78,14 @@
 			justify-content: flex-end;
 			align-items: center;
 			margin-bottom: 12px;
+
+			// &_wmpaddingX {
+			// 	display: none;
+			// }
+
+			// &_wmpaddingY {
+			// 	display: none;
+			// }
 
 			.incremental-label {
 				display: block;

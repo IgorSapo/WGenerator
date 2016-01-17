@@ -478,7 +478,8 @@ ul {
 .controlpanel-item {
   width: 100%;
   border-bottom: 1px solid #f7bbc1;
-  padding: 20px;
+  padding: 14px 21px 14px 19px;
+  position: relative;
 }
 .controlpanel .ui-slider {
   position: relative;
@@ -541,12 +542,37 @@ ul {
   left: -9999px;
 }
 
-.opacity {
-  height: 100px;
+.modeswitch-container {
+  font-size: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.modeswitch-container input[type="radio"] {
+  display: none;
+}
+.modeswitch-container .mode-switch-label {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+}
+.modeswitch-container .mode-switch-label_single {
+  background-image: url("/img/mode-single-default.png");
+  margin-right: 10px;
+}
+.modeswitch-container .mode-switch-label_multiple {
+  background-image: url("/img/mode-multiple-default.png");
+}
+.modeswitch-container input[type="radio"]:checked + label.mode-switch-label_single {
+  background-image: url("/img/mode-single-active.png");
+}
+.modeswitch-container input[type="radio"]:checked + label.mode-switch-label_multiple {
+  background-image: url("/img/mode-multiple-active.png");
 }
 
-.position {
-  height: 200px;
+.opacity {
+  height: 100px;
 }
 
 .preview {
@@ -607,12 +633,13 @@ ul {
   cursor: move;
 }
 
-.singleimage {
+.position-control {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  margin-top: 38px;
 }
-.singleimage .matrix-control .matrix-container {
+.position-control .matrix-control .matrix-container {
   width: 101px;
   height: 101px;
   display: flex;
@@ -623,7 +650,7 @@ ul {
   position: relative;
   overflow: hidden;
 }
-.singleimage .matrix-control .matrix-container .matrix-item {
+.position-control .matrix-control .matrix-container .matrix-item {
   width: 33px;
   height: 33px;
   border-left: 1px solid #9eb2c0;
@@ -631,16 +658,16 @@ ul {
   margin: 0;
   padding: 0;
 }
-.singleimage .matrix-control .matrix-container .matrix-item:nth-child(3n+1) {
+.position-control .matrix-control .matrix-container .matrix-item:nth-child(3n+1) {
   border-left: none;
 }
-.singleimage .matrix-control .matrix-container .matrix-item:nth-child(-n+3) {
+.position-control .matrix-control .matrix-container .matrix-item:nth-child(-n+3) {
   border-top: none;
 }
-.singleimage .matrix-control .matrix-container .matrix-item_active {
+.position-control .matrix-control .matrix-container .matrix-item_active {
   background-color: #f97f77;
 }
-.singleimage .matrix-control .matrix-container .horpadding {
+.position-control .matrix-control .matrix-container .horpadding {
   height: 100%;
   width: 0px;
   background-color: #f97f77;
@@ -651,7 +678,7 @@ ul {
   right: 0;
   margin: auto;
 }
-.singleimage .matrix-control .matrix-container .verpadding {
+.position-control .matrix-control .matrix-container .verpadding {
   width: 100%;
   height: 0px;
   background-color: #f97f77;
@@ -662,37 +689,37 @@ ul {
   right: 0;
   margin: auto;
 }
-.singleimage .incremental {
+.position-control .incremental {
   display: flex;
   flex-flow: column nowrap;
 }
-.singleimage .incremental-item {
+.position-control .incremental-item {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 12px;
 }
-.singleimage .incremental-item .incremental-label {
+.position-control .incremental-item .incremental-label {
   display: block;
 }
-.singleimage .incremental-item .incremental-label_wmpaddingX {
+.position-control .incremental-item .incremental-label_wmpaddingX {
   background-image: url("/img/incremental-padding-X.png");
   width: 29px;
   height: 9px;
 }
-.singleimage .incremental-item .incremental-label_wmpaddingY {
+.position-control .incremental-item .incremental-label_wmpaddingY {
   width: 11px;
   height: 30px;
   background-image: url("/img/incremental-padding-Y.png");
 }
-.singleimage .incremental-item .ui-spinner {
+.position-control .incremental-item .ui-spinner {
   display: block;
   position: relative;
   margin: 0 0 0 6px;
   width: 67px;
 }
-.singleimage .incremental-item .ui-spinner-up {
+.position-control .incremental-item .ui-spinner-up {
   display: block;
   width: 13px;
   height: 8px;
@@ -704,10 +731,10 @@ ul {
   top: 5px;
   cursor: pointer;
 }
-.singleimage .incremental-item .ui-spinner-up:hover {
+.position-control .incremental-item .ui-spinner-up:hover {
   background-image: url("/img/incremental-arrow-up-hover.png");
 }
-.singleimage .incremental-item .ui-spinner-down {
+.position-control .incremental-item .ui-spinner-down {
   display: block;
   width: 13px;
   height: 8px;
@@ -719,16 +746,16 @@ ul {
   bottom: 3px;
   cursor: pointer;
 }
-.singleimage .incremental-item .ui-spinner-down:hover {
+.position-control .incremental-item .ui-spinner-down:hover {
   background-image: url("/img/incremental-arrow-down-hover.png");
 }
-.singleimage .incremental-item .incremental-input {
+.position-control .incremental-item .incremental-input {
   border: 1px solid #9eb2c0;
   width: 46px;
   height: 45px;
   border-radius: 3px;
 }
-.singleimage .incremental-item .incremental-buttons {
+.position-control .incremental-item .incremental-buttons {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
