@@ -19,7 +19,8 @@ $imageQuality = 80; // useless for GIF, usefull for PNG and JPEG (0 to 100%)
 
 //Входные параметры
 $img_main_path = $_POST['imgSessionName']; 
-$img_watmark_path = "/img/upload/548.jpg";
+//$img_watmark_path = "/img/upload/548.jpg";
+$img_watmark_path = $_POST['wmImgSessionName'];
 $dirout = "/loadimg/";
 $posx = $_POST['wmposX']; 
 $posy = $_POST['wmposY']; 
