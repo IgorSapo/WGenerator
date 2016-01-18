@@ -1,34 +1,5 @@
+@charset "UTF-8";
 /* --------- sprite --------- */
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-*/
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
 /* --------- adjustment --------- */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -431,7 +402,7 @@ th {
 html, body {
   width: 100%;
   height: 100%;
-  font-family: "Open Sans", Arial , Helvetica, sans-serif;
+  font-family: Roboto, Arial , Helvetica, sans-serif;
 }
 
 ul {
@@ -558,6 +529,165 @@ ul {
   background-color: #f97e76;
 }
 
+/* ╨╕╨║╨╛╨╜╨║╨╕ ╤Б╨╗╨╡╨▓╨░ - ╤П╨╖╤Л╨║ ╨╕ share */
+.icons {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: 5;
+}
+.icons__language {
+  margin: 0 0 18px 0;
+  font-family: Roboto;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.icons__language-item .icons__language-link {
+  display: block;
+  padding: 4px 2px;
+  margin-bottom: 1px;
+  text-align: center;
+  color: #8e9298;
+  background-color: rgba(241, 241, 245, 0.7);
+  text-decoration: none;
+}
+.icons__language-item.active .icons__language-link {
+  color: #8e9298;
+  background-color: rgba(241, 241, 245, 0.7);
+  text-decoration: none;
+}
+
+.icons__share {
+  margin: 0;
+  padding: 0;
+}
+.icons__share-link {
+  display: block;
+  width: 43px;
+  height: 41px;
+  background-color: rgba(241, 241, 245, 0.7);
+  text-indent: -9999px;
+}
+
+.icons__share-link--like {
+  position: absolute;
+  top: 0px;
+  left: 43px;
+  background-position: -12px -157px;
+  text-indent: -9999px;
+}
+.icons__share-link--like:hover {
+  background-position: -12px -209px;
+}
+
+.icons__share-link--like:hover {
+  left: 43px;
+  top: 0;
+}
+
+.icons__share-item--socials {
+  display: block;
+}
+
+.icons__share {
+  position: absolute;
+  left: 0;
+}
+
+.icons__share-link--fb {
+  background-position: -7px -342px;
+}
+.icons__share-link--fb:hover {
+  background-position: -7px -295px;
+  animation: shakeThatBooty 0.3s linear 1;
+  -webkit-animation: shakeThatBooty 0.3s linear 1;
+  -moz-animation: shakeThatBooty 0.3s linear 1;
+  -o-animation: shakeThatBooty 0.3s linear 1;
+  -ms-animation: shakeThatBooty 0.3s linear 1;
+}
+.icons__share-link--tw {
+  background-position: -13px -109px;
+}
+.icons__share-link--tw:hover {
+  background-position: -13px -67px;
+  animation: shakeThatBooty 0.3s linear 1;
+  -webkit-animation: shakeThatBooty 0.3s linear 1;
+  -moz-animation: shakeThatBooty 0.3s linear 1;
+  -o-animation: shakeThatBooty 0.3s linear 1;
+  -ms-animation: shakeThatBooty 0.3s linear 1;
+}
+.icons__share-link--vk {
+  background-position: -15px -26px;
+}
+.icons__share-link--vk:hover {
+  background-position: -15px 12px;
+  animation: shakeThatBooty 0.3s linear 1;
+  -webkit-animation: shakeThatBooty 0.3s linear 1;
+  -moz-animation: shakeThatBooty 0.3s linear 1;
+  -o-animation: shakeThatBooty 0.3s linear 1;
+  -ms-animation: shakeThatBooty 0.3s linear 1;
+}
+
+.icons__socials {
+  position: absolute;
+  left: -44px;
+  -webkit-transition: left 500ms cubic-bezier(0.14, 0.05, 0.23, 0.97);
+  -moz-transition: left 500ms cubic-bezier(0.14, 0.05, 0.23, 0.97);
+  -o-transition: left 500ms cubic-bezier(0.14, 0.05, 0.23, 0.97);
+  transition: left 500ms cubic-bezier(0.14, 0.05, 0.23, 0.97);
+  /* custom */
+}
+.icons__socials:hover {
+  left: 0;
+}
+
+@-webkit-keyframes shakeThatBooty {
+  33% {
+    transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    -o-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+  }
+  67% {
+    transform: rotateZ(-10deg);
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    -o-transform: rotateZ(-10deg);
+    -ms-transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    -o-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+  }
+}
+@keyframes shakeThatBooty {
+  33% {
+    transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    -o-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+  }
+  67% {
+    transform: rotateZ(-10deg);
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    -o-transform: rotateZ(-10deg);
+    -ms-transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    -o-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+  }
+}
 .mainimage-upload {
   margin-bottom: 22px;
 }

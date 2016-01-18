@@ -29,31 +29,38 @@
 	z-index: 5;
 	&__language {
 		margin: 0 0 18px 0;
-		font-family: "SegoeUILight";
+		font-family: Roboto;
 		font-size: 20px;
+		margin: 0;
+		padding: 0;
 		&-item &-link {
 			display: block;
 			//min-width: 43px;
 			padding: 4px 2px;
 			margin-bottom: 1px;
 			text-align: center;
-			color: $text-icons;
-			background: $bg-icons;
+			color: #8e9298;
+			background-color: rgba(241, 241, 245, 0.7);
+			text-decoration: none;
 		};
 		&-item.active &-link {
-			color: $text-icons-active;
-			background: $bg-icons-active;
+			color: #8e9298;
+			background-color: rgba(241, 241, 245, 0.7);
+			text-decoration: none;
 		};
 	};
 }
 .icons {
 		&__share {
+		margin: 0;
+		padding: 0;
 
 			&-link {
 			display: block;
 			width: 43px;
 			height: 41px;
-			background: $bg-icons url(../img/sprite.png) no-repeat;
+			background-color: rgba(241, 241, 245, 0.7);
+			// background: $bg-icons url(../img/sprite.png) no-repeat;
 			text-indent: -9999px;
 			}
 		}
