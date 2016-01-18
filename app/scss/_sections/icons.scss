@@ -1,0 +1,149 @@
+/* иконки слева - язык и share */
+
+@mixin transition($in) {
+	transition:$in;
+	-webkit-transition:$in;
+	-moz-transition:$in;
+	-o-transition:$in;
+	-ms-transition:$in;
+}
+@mixin transform($in) {
+	transform:$in;
+	-webkit-transform:$in;
+	-moz-transform:$in;
+	-o-transform:$in;
+	-ms-transform:$in;
+}
+@mixin animation($in) {
+	animation:$in;
+	-webkit-animation:$in;
+	-moz-animation:$in;
+	-o-animation:$in;
+	-ms-animation:$in;
+}
+
+.icons {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	z-index: 5;
+	&__language {
+		margin: 0 0 18px 0;
+		font-family: "SegoeUILight";
+		font-size: 20px;
+		&-item &-link {
+			display: block;
+			//min-width: 43px;
+			padding: 4px 2px;
+			margin-bottom: 1px;
+			text-align: center;
+			color: $text-icons;
+			background: $bg-icons;
+		};
+		&-item.active &-link {
+			color: $text-icons-active;
+			background: $bg-icons-active;
+		};
+	};
+}
+.icons {
+		&__share {
+
+			&-link {
+			display: block;
+			width: 43px;
+			height: 41px;
+			background: $bg-icons url(../img/sprite.png) no-repeat;
+			text-indent: -9999px;
+			}
+		}
+}
+
+.icons__share-link {
+		&--like {
+			position: absolute;
+			top:0px;
+			left: 43px;
+			background-position: -12px -157px;
+			text-indent: -9999px;
+			&:hover {
+				background-position: -12px -209px;
+			}
+		}
+}
+.icons__share-link--like {
+		&:hover {
+			left: 43px;
+			//position: absolute;
+			top:0;
+			}
+}
+.icons__share-item--socials {
+	display: block;
+}
+.icons__share {
+	position: absolute;
+	left:0;
+	&:hover {
+		//position: absolute;
+		//left: 0px;
+	}
+}
+.icons__share-link {
+		&--fb {
+		background-position: -7px -342px;
+			&:hover {
+			background-position: -7px -295px;
+			@include animation(shakeThatBooty 0.3s linear 1);
+			}
+		}
+		&--tw {
+		background-position: -13px -109px;
+			&:hover {
+			background-position: -13px -67px;
+			@include animation(shakeThatBooty 0.3s linear 1);
+			}
+		}
+		&--vk {
+		background-position: -15px -26px;
+			&:hover {
+			background-position: -15px 12px;
+			@include animation(shakeThatBooty 0.3s linear 1);
+			}
+		}
+}
+.icons__socials{
+	position: absolute;
+	left: -44px;
+	-webkit-transition: left 500ms cubic-bezier(0.140, 0.050, 0.230, 0.970);
+   	-moz-transition: left 500ms cubic-bezier(0.140, 0.050, 0.230, 0.970);
+    -o-transition: left 500ms cubic-bezier(0.140, 0.050, 0.230, 0.970);
+    transition: left 500ms cubic-bezier(0.140, 0.050, 0.230, 0.970); /* custom */
+
+	&:hover {
+		left:0;
+	}
+}
+
+@-webkit-keyframes shakeThatBooty {
+	33% {
+		@include transform(rotateZ(10deg));
+	}
+	67% {
+		@include transform(rotateZ(-10deg));
+	}
+	100% {
+		@include transform(rotateZ(10deg));
+	}
+}
+@keyframes shakeThatBooty {
+	33% {
+		@include transform(rotateZ(10deg));
+	}
+	67% {
+		@include transform(rotateZ(-10deg));
+	}
+	100% {
+		@include transform(rotateZ(10deg));
+	}
+}
