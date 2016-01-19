@@ -27,7 +27,7 @@ $posy = $_POST['wmposY'];
 $padx = $_POST['wmpaddingX']; 
 $pady = $_POST['wmpaddingY']; 
 $mode = $_POST['watermark-mode']; 
-$opacity = $_POST['watermark-mode'] * 100;
+$opacity = $_POST['opacity'] * 100;
 
 
 // открываем картинки
@@ -41,12 +41,12 @@ $wtm_width = $wtmpic->getWidth();
 $wtm_height = $wtmpic->getHeight();*/
 
 // прибавляем отступы к ватермарку
-$wmpic_width += $margx;
-$wmpic_height += $margy;
+/*$wmpic_width += $margx;
+$wmpic_height += $margy;*/
 
-//$wtmpic->opacity($opacity);
-$mainpic->addLayerOnTop($wtmpic, 60, 600);
-//$mainpic->addLayerOnTop($wtmpic, $posx, $posy);
+$wtmpic->opacity($opacity);
+//$mainpic->addLayerOnTop($wtmpic, 60, 600);
+$mainpic->addLayerOnTop($wtmpic, $posx, $posy);
 
 
 // Saving the result
@@ -67,32 +67,4 @@ $answer['mode'] = $mode;
 $answer['syspath'] = $wtm_width;
 //$answer['upladpath'] = $uploadpath;
 exit($uploadpath);
-// выгрузка файла клиенут
-/*$giveimg = "file_force_download";
-$giveimg($uploadpath);
-
-
-function file_force_download($file) {
-  if (file_exists($file)) {
-    // сбрасываем буфер вывода PHP, чтобы избежать переполнения памяти выделенной под скрипт
-    // если этого не сделать файл будет читаться в память полностью!
-    if (ob_get_level()) {
-      ob_end_clean();
-    }
-    // заставляем браузер показать окно сохранения файла
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename=' . basename($file));
-    header('Content-Transfer-Encoding: binary');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file));
-    // читаем файл и отправляем его пользователю
-    readfile($file);
-    exit;
-  }
-}*/
-//echo json_encode($answer);
-
 ?>
