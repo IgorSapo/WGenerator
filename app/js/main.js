@@ -494,7 +494,7 @@ $(".mode-switch-label_single").on('click', function() {
                 success: function(answer) {
                      //console.log(serverResponse);
                      console.log(answer);
-                     _imgDownload(encodeURIComponent(answer));
+                     //_imgDownload(encodeURIComponent(answer));
                  }
             });
 /*        .done(function(answer){
