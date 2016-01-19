@@ -44,9 +44,9 @@ $wtm_height = $wtmpic->getHeight();*/
 $wmpic_width += $margx;
 $wmpic_height += $margy;
 
-//$wtmpic->opacity($opacity);
-$mainpic->addLayerOnTop($wtmpic, 60, 600);
-//$mainpic->addLayerOnTop($wtmpic, $posx, $posy);
+$wtmpic->opacity($opacity);
+//$mainpic->addLayerOnTop($wtmpic, 60, 600);
+$mainpic->addLayerOnTop($wtmpic, $posx, $posy);
 
 
 // Saving the result
