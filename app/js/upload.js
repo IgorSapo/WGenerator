@@ -35,23 +35,25 @@ var Saveimg = (function(){
         			contentType: false // не отправлять стрингреквест
 				})
 				.done(function(answer){
-					console.log(answer.url);
-					console.log("выполнено");
-					var urlimg = answer.url
+					console.log(answer);
+					if(answer.status ==="OK"){
+						console.log("выполнено");
+						var urlimg = answer.url
 
-					if (imgClass == "mainimage") {
-						$('.preview-mainimage_image').attr('src',urlimg);
-						$('#imgSessionName').val(urlimg);
-					} 
+						if (imgClass == "mainimage") {
+							$('.preview-mainimage_image').attr('src',urlimg);
+							$('#imgSessionName').val(urlimg);
+						} 
 
-					else if (imgClass == "watermark") {
-						$('.preview-watermark_image').attr('src',urlimg);
-						$('#wmImgSessionName').val(urlimg);
+						else if (imgClass == "watermark") {
+							$('.preview-watermark_image').attr('src',urlimg);
+							$('#wmImgSessionName').val(urlimg);
+						}
+					}else if(answer.text ==="Превышен размер файла"){
+						console.log('Превышен размер файла');
+					}else if(answer.text ==="Тип файла не поддерживается"){
+						console.log('Тип файла не поддерживается');
 					}
-
-
-					
-
 				})
 				.fail(function(answer){
 					console.log(answer);

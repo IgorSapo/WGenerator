@@ -489,7 +489,7 @@ $(".mode-switch-label_single").on('click', function() {
         $.ajax ({
                 type: "POST",
                 cache: false,
-                url: "php/wgenerator.php",
+                url: "php/watermark.php",
                 data: str, //,
                 success: function(answer) {
                      //console.log(serverResponse);
